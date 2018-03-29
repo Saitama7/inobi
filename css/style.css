@@ -292,6 +292,17 @@ body::-webkit-scrollbar { width: 0 !important }
 body::-moz-viewport-scroll {width: 0 !important}
 body { -ms-overflow-style: none; }
 body { overflow: -moz-scrollbars-none; }
+.in-touch {
+    width: 45vw;
+    height: 50vh;
+    margin: 10% 0 5% 20%;
+}
+.forms {
+    width: 25vw;
+    margin: 10% 2% 2% 0;
+    float: left;
+}
+
 
 /*END MAIN*/
 
