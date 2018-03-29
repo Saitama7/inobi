@@ -251,7 +251,6 @@ span {
     padding: 2% 8% 1% 8%;
     text-align: center;
     display: inline-block;
-    margin-bottom: 3%;
 }
 .profit h1 {
     padding-right: 2%;
@@ -294,8 +293,7 @@ body { -ms-overflow-style: none; }
 body { overflow: -moz-scrollbars-none; }
 .in-touch {
     width: 45vw;
-    height: 50vh;
-    margin: 10% 0 5% 20%;
+    margin: 0 auto;
 }
 .forms {
     width: 25vw;

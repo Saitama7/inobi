@@ -7,18 +7,16 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 });
 jQuery(function() {
     setTimeout(function() {
-        animateMenu(50);
+        animateMenu(height);
     },500);
 
-
-    var height = 50;
-
+    var height = 49;
 
     var i = 0;
     jQuery('.animate-menu ul li').each(function (e) {
         console.log(jQuery(this).attr('class'));
-        jQuery(this).attr('class', "li-"+(height + i))
-        i = i + 50;
+        jQuery(this).attr('class', "li-"+(height + i));
+        i = i + height;
     });
 
 
@@ -31,7 +29,6 @@ jQuery(function() {
         },1000);
         jQuery(".line").animate({
                 height: h + 'px'
-
             }, 1000,
             function() {
                 var after = h + height;
@@ -46,7 +43,6 @@ jQuery(function() {
             }
         );
     }
-
 });
 
 jQuery(function() {
@@ -54,13 +50,9 @@ jQuery(function() {
         var clName = jQuery(this).attr('class');
         clName = clName.split('-');
         clName = clName[1];
-
-
-
         clName = parseInt(clName);
-
         jQuery('.bus').animate({
-            top: -56 + clName + 'px'
+            top: -55 + clName + 'px'
         },1000);
     });
 });
@@ -76,37 +68,30 @@ jQuery(function () {
 
 $(window).scroll(function () {
     // var winHeight = $(window).height();
-
-    var works = $('#works');
-    var worksPos = works.offset().top;
-    // var scrollToWorks = worksPos - winHeight;
+    // var works = $('#works');
+    // var worksPos = works.offset().top;
+    // // var scrollToWorks = worksPos - winHeight;
 
     var winScrollTop = $(window).scrollTop();
-
-
-
     var elmnt = document.getElementById("wrapper");
     var y = elmnt.scrollHeight;
-
-
-    var top =  (winScrollTop * 200 / y) - 4;
+    var top =  (winScrollTop * 249 / y ) - 6;
     $('.bus').css('top', top);
 
 });
-
 
 $.scrollify({
     section : "section",
     sectionName : "section-name",
     interstitialSection : "",
     easing: "easeOutExpo",
-    scrollSpeed: 1100,
+    scrollSpeed: 1500,
     offset : 0,
     scrollbars: false,
     standardScrollElements: "",
     setHeights: true,
     overflowScroll: false,
-    updateHash: true,
+    updateHash: false,
     touchScroll:true,
     before:function() {},
     after:function() {},
@@ -114,5 +99,16 @@ $.scrollify({
     afterRender:function() {}
 });
 
+// CLEAR URL
+remove_hash_from_url();
+function remove_hash_from_url()
+{
+    var uri = window.location.toString();
+    if (uri.indexOf("#") > 0) {
+        var clean_uri = uri.substring(0, uri.indexOf("#"));
+    }
+}
 
-
+$(window).on('beforeunload', function() {
+    $(window).scrollTop(0);
+});
