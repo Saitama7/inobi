@@ -351,11 +351,18 @@ body { overflow: -moz-scrollbars-none; }
     margin-top: 5px!important;
     width: 5.5rem!important;
     line-height: 1.5!important;
+    box-shadow: 0 34px 50px -6px grey;
 }
 button:hover {
-    background-color: #007bff !important;
-    border-color: #007bff;
+    background-color: #fafafa !important;
+    border-color: #fafcfc !important;
+    color: #0273d4 !important;
+    box-shadow: 0 34px 50px -6px #77909C !important;
 }
+.btn {
+    box-shadow: 0 34px 50px -6px #77909C !important;
+}
+
 
 
 
