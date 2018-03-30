@@ -270,6 +270,7 @@ span {
 }
   .operators  h3 {
       padding-top: 7%;
+      color: limegreen;
 }
   .operators img {
       width: 25%;
@@ -282,6 +283,7 @@ span {
 }
 .passengers h3 {
     padding-top: 2%;
+    color: limegreen;
 }
 .passengers img {
     width: 25%;
@@ -327,6 +329,13 @@ body { overflow: -moz-scrollbars-none; }
 }
 .limegreen input::placeholder {
     color: limegreen !important;
+    opacity: 0.8;
+}
+.input input::placeholder {
+    opacity: 0.8;
+}
+.form-group textarea::placeholder {
+    opacity: 0.8;
 }
 
 
