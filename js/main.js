@@ -54,7 +54,11 @@ jQuery(function() {
         jQuery('.bus').animate({
             top: -55 + clName + 'px'
         },1000);
+        var u = new Url('http://192.168.1.179:2003');
+        var uhash = $(this).attr('href');
+        u.hash = uHash;
     });
+
 });
 
 jQuery(function () {
@@ -91,7 +95,7 @@ $.scrollify({
     standardScrollElements: "",
     setHeights: true,
     overflowScroll: false,
-    updateHash: false,
+    updateHash: true,
     touchScroll:true,
     before:function() {},
     after:function() {},
