@@ -295,11 +295,42 @@ body { overflow: -moz-scrollbars-none; }
     width: 45vw;
     margin: 0 auto;
 }
-.forms {
-    width: 25vw;
-    margin: 10% 2% 2% 0;
-    float: left;
+.in-touch h1 {
+    padding-top: 10vh;
 }
+.select {
+    width: 20vw;
+    padding-top: 5vh;
+    display: inline-block!important;
+}
+.transparent {
+    border-left: transparent!important;
+    border-right: transparent!important;
+    border-top: transparent !important;
+}
+.input {
+    width: 20vw;
+    padding-top: 5vh;
+    float: right;
+}
+.float-l {
+    float: left !important;
+}
+.float-r {
+    float: right !important;
+}
+.form-group {
+    margin-top: 17vh;
+}
+#exampleFormControlTextarea1 {
+    height: 15vh;
+}
+.limegreen input::placeholder {
+    color: limegreen !important;
+}
+
+
+
 
 
 /*END MAIN*/
