@@ -118,6 +118,9 @@ a {
 /*END-NAV-ANIMATE and HEADER*/
 
 /* MAIN */
+#home {
+    position: relative;
+}
 /*ANIMATE-DEVICE*/
 .options {
     display: inline-block;
