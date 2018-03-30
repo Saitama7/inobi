@@ -301,7 +301,11 @@ body { overflow: -moz-scrollbars-none; }
     margin: 0 auto;
 }
 .in-touch h1 {
-    padding-top: 10vh;
+    padding-top: 8vh;
+}
+.custom-select-sm {
+    color: #77909C !important;
+    font-size: 15px!important;
 }
 .select {
     width: 20vw;
@@ -339,6 +343,18 @@ body { overflow: -moz-scrollbars-none; }
 }
 .form-group textarea::placeholder {
     opacity: 0.8;
+}
+.btn-primary {
+    background-color: #0273d4!important;
+    border-radius: 15px!important;
+    padding: 12px!important;
+    margin-top: 5px!important;
+    width: 5.5rem!important;
+    line-height: 1.8!important;
+}
+button:hover {
+    background-color: #007bff !important;
+    border-color: #007bff;
 }
 
 
