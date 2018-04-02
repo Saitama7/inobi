@@ -1,10 +1,3 @@
-$(document).on('click', 'a[href^="#"]', function (event) {
-    event.preventDefault();
-
-    $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-    }, 1000);
-});
 jQuery(function() {
     setTimeout(function() {
         animateMenu(height);
@@ -18,7 +11,6 @@ jQuery(function() {
         jQuery(this).attr('class', "li-"+(height + i));
         i = i + height;
     });
-
 
     function animateMenu(h) {
         jQuery('.li-' + h).animate({
@@ -44,16 +36,21 @@ jQuery(function() {
         );
     }
 });
-
+$(document).ready(function () {
+    $.scrollify.instantMove("#home");
+    window.location.hash = '';
+});
 jQuery(function() {
     jQuery('.animate-menu ul li').click(function () {
         var clName = jQuery(this).attr('class');
+        var hrf = $(this).find('a').attr('href');
         clName = clName.split('-');
         clName = clName[1];
         clName = parseInt(clName);
         jQuery('.bus').animate({
             top: -55 + clName + 'px'
         },1000);
+        $.scrollify.move(hrf);
     });
 });
 
@@ -67,59 +64,35 @@ jQuery(function () {
 });
 
 $(window).scroll(function () {
-    // var winHeight = $(window).height();
-    // var works = $('#works');
-    // var worksPos = works.offset().top;
-    // // var scrollToWorks = worksPos - winHeight;
-
     var winScrollTop = $(window).scrollTop();
     var elmnt = document.getElementById("wrapper");
     var y = elmnt.scrollHeight;
     var top =  (winScrollTop * 249 / y ) - 6;
     $('.bus').css('top', top);
-
 });
 
-// $.scrollify({
-//     section : "section",
-//     sectionName : "section-name",
-//     interstitialSection : "",
-//     easing: "easeOutExpo",
-//     scrollSpeed: 1500,
-//     offset : 0,
-//     scrollbars: false,
-//     standardScrollElements: "",
-//     setHeights: true,
-//     overflowScroll: false,
-//     updateHash: false,
-//     touchScroll:true,
-//     scrolled:true,
-//     before:function() {},
-//     after:function() {},
-//     afterResize:function() {},
-//     afterRender:function() {}
-// });
-
-// // CLEAR URL
-// remove_hash_from_url();
-// function remove_hash_from_url()
-// {
-//     var uri = window.location.toString();
-//     if (uri.indexOf("#") > 0) {
-//         var clean_uri = uri.substring(0, uri.indexOf("#"));
-//     }
-// }
+$.scrollify({
+    section : ".panel",
+    sectionName : "section-name",
+    interstitialSection : "",
+    easing: "easeOutExpo",
+    scrollSpeed: 1500,
+    offset : 0,
+    scrollbars: false,
+    standardScrollElements: "",
+    setHeights: true,
+    overflowScroll: false,
+    updateHash: false,
+    touchScroll:true,
+    scrolled:true,
+    before:function() {},
+    after:function() {},
+    afterResize:function() {},
+    afterRender:function() {}
+});
 
 $(window).on('beforeunload', function() {
+    
     $(window).scrollTop(0);
-});
 
-$(document).ready(function() {
-    $('#wrapper').fullpage({
-        sectionsColor: ['', '', '', '', ''],
-        anchors: ['home', 'device', 'works', 'profit', 'contact'],
-         menu: '.menu',
-        showActiveTooltip: true
-
-    });
 });

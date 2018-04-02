@@ -14,7 +14,7 @@
 </head>
 <body id="body">
         <div id="wrapper">
-            <section class="container section" id="section0">
+            <section class="container panel" id="home" data-section-name="home">
                 <div id="planet"></div>
                 <header class="container">
                     <div class="nav-menu">
@@ -23,11 +23,11 @@
                             <div class="animate-menu">
                                 <div class="line"></div>
                                 <ul>
-                                    <li data-menuanchor="home"><a href="#section0"><span>Home</span> <span class='round'></span></a></li>
-                                    <li data-menuanchor="device"><a href="#section1"><span>Device</span> <span class='round'></span></a></li>
-                                    <li data-menuanchor="works"><a href="#section2"><span>Works</span> <span class='round'></span></a></li>
-                                    <li data-menuanchor="profit"><a href="#section3" ><span>Profit</span> <span class='round'></span></a></li>
-                                    <li data-menuanchor="contact"><a href="#section4" ><span>Contact</span> <span class='round'></span></a></li>
+                                    <li data-menuanchor="home"><a href="#home"><span>Home</span> <span class='round'></span></a></li>
+                                    <li data-menuanchor="device"><a href="#device" id="a-device"><span>Device</span> <span class='round'></span></a></li>
+                                    <li data-menuanchor="works"><a href="#works"><span>Works</span> <span class='round'></span></a></li>
+                                    <li data-menuanchor="profit"><a href="#profit" ><span>Profit</span> <span class='round'></span></a></li>
+                                    <li data-menuanchor="contact"><a href="#contact" ><span>Contact</span> <span class='round'></span></a></li>
                                 </ul>
                                 <div class="bus"><img src="uploads/marker_bus.png" id="m-bus" width="20" height="25" alt=""></div>
                             </div>
@@ -39,7 +39,7 @@
                     <h1><span></span> Inobi Smart Public Transport <span></span></h1>
                 </div>
             </section>
-            <section id="section1" class="container section">
+            <section id="device" class="container panel" data-section-name="device">
                 <div class="description">
                     <h1>Inobi Device</h1>
                     <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus enim eveniet fugiat in itaque necessitatibus odit officiis qui quibusdam veniam.</p>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
             </section>
-            <section id="section2" class="container section">
+            <section id="works" class="container panel" data-section-name="works">
                 <div class="work">
                     <h1>How It Works</h1>
                     <ol>
@@ -80,7 +80,7 @@
                     </ol>
                 </div>
             </section>
-            <section id="section3" class="container section">
+            <section id="profit" class="container panel" data-section-name="profit">
                 <div class="profit">
                         <h1>Profit</h1>
                     <div class="operators">
@@ -105,16 +105,17 @@
                     </div>
                 </div>
             </section>
-            <section id="section4" class="section">
+            <section id="contact" data-section-name="contact" class="panel">
                 <div class="container">
                     <div class="in-touch">
                         <h1>Get in Touch</h1>
                         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam cumque deleniti dolore fuga fugit molestias
-                            perferendis quas unde vero! Deleniti et iusto neque nostrum officiis quasi rem rerum suscipit.  </p>
-                        <br><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, similique?</p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, repellat.</p>
+                        <p>Lorem ipsum dolor sit
+                        amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, similique?</p>
                         <div class="select">
                             <select class="custom-select custom-select-sm transparent">
-                                <option selected>Interested in</option>
+                                <option selected><p>Interested in</p></option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
                                 <option value="3">Three</option>
@@ -130,22 +131,21 @@
                             <input class="form-control form-control-sm transparent" type="text" placeholder="E-mail">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Your message"></textarea>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Your message . . ."></textarea>
                         </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                 </div>
             </section>
         </div>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/deviceAnimate.js"></script>
-<!--<script type="text/javascript" src="js/scrollify.js"></script>-->
-<!--<script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>-->
-<script type="text/javascript" src="js/jquery.fullPage.js"></script>
 <script type="text/javascript" src="js/url.min.js"></script>
 <script type="text/javascript" src="js/three/three.min.js"></script>
 <script type="text/javascript" src="js/three/projector.js"></script>
 <script type="text/javascript" src="js/three/canvas-render.js"></script>
 <script type="text/javascript" src="js/three/stats.min.js"></script>
+<script type="text/javascript" src="js/scrollify.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
         <script>

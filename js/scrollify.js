@@ -715,6 +715,8 @@ if touchScroll is false - update index
             if(typeof panel === 'string') {
                 if (names[z]===panel) {
                     index = z;
+                    console.log(z);
+                    console.log(instant);
                     //index, instant, callbacks, toTop
                     animateScroll(z,instant,true,true);
                 }
@@ -735,6 +737,7 @@ if touchScroll is false - update index
             panel = $(this).attr("href");
         }
         move(panel,false);
+
     };
     scrollify.instantMove = function(panel) {
         if(panel===undefined) {
