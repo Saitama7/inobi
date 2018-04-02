@@ -349,6 +349,7 @@ body { overflow: -moz-scrollbars-none; }
 }
 .input input::placeholder {
     opacity: 0.8;
+<<<<<<< HEAD
 }
 .form-group textarea::placeholder {
     opacity: 0.8;
@@ -362,6 +363,21 @@ body { overflow: -moz-scrollbars-none; }
     line-height: 1.5!important;
     box-shadow: 0 34px 50px -6px grey;
 }
+=======
+}
+.form-group textarea::placeholder {
+    opacity: 0.8;
+}
+.btn-primary {
+    background-color: #0273d4!important;
+    border-radius: 15px!important;
+    padding: 12px!important;
+    margin-top: 5px!important;
+    width: 5.5rem!important;
+    line-height: 1.5!important;
+    box-shadow: 0 34px 50px -6px grey;
+}
+>>>>>>> 0916843edec1b49df25f689838da890d6ebabaa1
 button:hover {
     background-color: #fafafa !important;
     border-color: #fafcfc !important;
