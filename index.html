@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animation.min.css">
+    <script src="js/main.js"></script>
 </head>
 <body id="body">
         <div id="wrapper">
-            <section class="container" id="home">
-
+            <section class="container section" id="section0">
+                <div id="planet"></div>
                 <header class="container">
                     <div class="nav-menu">
                         <img src="uploads/logo.png" alt="inobi" class="logo">
@@ -22,11 +23,11 @@
                             <div class="animate-menu">
                                 <div class="line"></div>
                                 <ul>
-                                    <a href="#home"><li ><span>Home</span> <span class='round'></span></li></a>
-                                    <a href="#device"><li ><span>Device</span> <span class='round'></span></li></a>
-                                    <a href="#works"><li ><span>Works</span> <span class='round'></span></li></a>
-                                    <a href="#profit"><li><span>Profit</span> <span class='round'></span></li></a>
-                                    <a href="#contact"><li><span>Contact</span> <span class='round'></span></li></a>
+                                    <li data-menuanchor="home"><a href="#section0"><span>Home</span> <span class='round'></span></a></li>
+                                    <li data-menuanchor="device"><a href="#section1"><span>Device</span> <span class='round'></span></a></li>
+                                    <li data-menuanchor="works"><a href="#section2"><span>Works</span> <span class='round'></span></a></li>
+                                    <li data-menuanchor="profit"><a href="#section3" ><span>Profit</span> <span class='round'></span></a></li>
+                                    <li data-menuanchor="contact"><a href="#section4" ><span>Contact</span> <span class='round'></span></a></li>
                                 </ul>
                                 <div class="bus"><img src="uploads/marker_bus.png" id="m-bus" width="20" height="25" alt=""></div>
                             </div>
@@ -38,7 +39,7 @@
                     <h1><span></span> Inobi Smart Public Transport <span></span></h1>
                 </div>
             </section>
-            <section id="device" class="container">
+            <section id="section1" class="container section">
                 <div class="description">
                     <h1>Inobi Device</h1>
                     <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus enim eveniet fugiat in itaque necessitatibus odit officiis qui quibusdam veniam.</p>
@@ -69,7 +70,7 @@
                     </div>
                 </div>
             </section>
-            <section id="works" class="container">
+            <section id="section2" class="container section">
                 <div class="work">
                     <h1>How It Works</h1>
                     <ol>
@@ -79,7 +80,7 @@
                     </ol>
                 </div>
             </section>
-            <section id="profit" class="container">
+            <section id="section3" class="container section">
                 <div class="profit">
                         <h1>Profit</h1>
                     <div class="operators">
@@ -104,7 +105,7 @@
                     </div>
                 </div>
             </section>
-            <section id="contact">
+            <section id="section4" class="section">
                 <div class="container">
                     <div class="in-touch">
                         <h1>Get in Touch</h1>
@@ -137,8 +138,111 @@
         </div>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/deviceAnimate.js"></script>
-<script type="text/javascript" src="js/scrollify.js"></script>
+<!--<script type="text/javascript" src="js/scrollify.js"></script>-->
+<!--<script type="text/javascript" src="js/jquery.onepage-scroll.js"></script>-->
+<script type="text/javascript" src="js/jquery.fullPage.js"></script>
 <script type="text/javascript" src="js/url.min.js"></script>
+<script type="text/javascript" src="js/three/three.min.js"></script>
+<script type="text/javascript" src="js/three/projector.js"></script>
+<script type="text/javascript" src="js/three/canvas-render.js"></script>
+<script type="text/javascript" src="js/three/stats.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+
+        <script>
+            var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
+            var container, stats;
+            var camera, scene, renderer;
+            var particles, particle, count = 0;
+            var mouseX = 0, mouseY = 0;
+            var windowHalfX = window.innerWidth / 2;
+            var windowHalfY = window.innerHeight / 2;
+            init();
+            animate();
+            function init() {
+                container = document.getElementById('planet');
+                camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
+                camera.position.z = 1000;
+                scene = new THREE.Scene();
+                particles = new Array();
+                var PI2 = Math.PI * 2;
+                var material = new THREE.SpriteCanvasMaterial( {
+                    color: 0x0273d4,
+                    program: function ( context ) {
+                        context.beginPath();
+                        context.arc( 0, 0, 0.5, 0, PI2, true );
+                        context.fill();
+                    }
+                } );
+                var i = 0;
+                for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+                    for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+                        particle = particles[ i ++ ] = new THREE.Sprite( material );
+                        particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
+                        particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
+                        scene.add( particle );
+                    }
+                }
+                renderer = new THREE.CanvasRenderer();
+                renderer.setPixelRatio( window.devicePixelRatio );
+                renderer.setSize( window.innerWidth, window.innerHeight );
+                container.appendChild( renderer.domElement );
+                stats = new Stats();
+                // container.appendChild( stats.dom );
+                document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+                document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+                document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+                //
+                window.addEventListener( 'resize', onWindowResize, false );
+            }
+            function onWindowResize() {
+                windowHalfX = window.innerWidth / 2;
+                windowHalfY = window.innerHeight / 2;
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize( window.innerWidth, window.innerHeight );
+            }
+            //
+            function onDocumentMouseMove( event ) {
+                mouseX = event.clientX - windowHalfX;
+                mouseY = event.clientY - windowHalfY;
+            }
+            function onDocumentTouchStart( event ) {
+                if ( event.touches.length === 1 ) {
+                    event.preventDefault();
+                    mouseX = event.touches[ 0 ].pageX - windowHalfX;
+                    mouseY = event.touches[ 0 ].pageY - windowHalfY;
+                }
+            }
+            function onDocumentTouchMove( event ) {
+                if ( event.touches.length === 1 ) {
+                    event.preventDefault();
+                    mouseX = event.touches[ 0 ].pageX - windowHalfX;
+                    mouseY = event.touches[ 0 ].pageY - windowHalfY;
+                }
+            }
+            //
+            function animate() {
+                requestAnimationFrame( animate );
+                render();
+                stats.update();
+            }
+            function render() {
+                camera.position.x += ( mouseX - camera.position.x ) * .05;
+                camera.position.y += ( - mouseY - camera.position.y ) * .05;
+                camera.lookAt( scene.position );
+                var i = 0;
+                for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
+                    for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
+                        particle = particles[ i++ ];
+                        particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) +
+                            ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
+                        particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 4 +
+                            ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 4;
+                    }
+                }
+                renderer.render( scene, camera );
+                count += 0.1;
+            }
+        </script>
 </body>
 </html>

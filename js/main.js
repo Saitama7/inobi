@@ -54,11 +54,7 @@ jQuery(function() {
         jQuery('.bus').animate({
             top: -55 + clName + 'px'
         },1000);
-        var u = new Url('http://192.168.1.179:2003');
-        var uhash = $(this).attr('href');
-        u.hash = uHash;
     });
-
 });
 
 jQuery(function () {
@@ -84,35 +80,46 @@ $(window).scroll(function () {
 
 });
 
-$.scrollify({
-    section : "section",
-    sectionName : "section-name",
-    interstitialSection : "",
-    easing: "easeOutExpo",
-    scrollSpeed: 1500,
-    offset : 0,
-    scrollbars: false,
-    standardScrollElements: "",
-    setHeights: true,
-    overflowScroll: false,
-    updateHash: true,
-    touchScroll:true,
-    before:function() {},
-    after:function() {},
-    afterResize:function() {},
-    afterRender:function() {}
-});
+// $.scrollify({
+//     section : "section",
+//     sectionName : "section-name",
+//     interstitialSection : "",
+//     easing: "easeOutExpo",
+//     scrollSpeed: 1500,
+//     offset : 0,
+//     scrollbars: false,
+//     standardScrollElements: "",
+//     setHeights: true,
+//     overflowScroll: false,
+//     updateHash: false,
+//     touchScroll:true,
+//     scrolled:true,
+//     before:function() {},
+//     after:function() {},
+//     afterResize:function() {},
+//     afterRender:function() {}
+// });
 
-// CLEAR URL
-remove_hash_from_url();
-function remove_hash_from_url()
-{
-    var uri = window.location.toString();
-    if (uri.indexOf("#") > 0) {
-        var clean_uri = uri.substring(0, uri.indexOf("#"));
-    }
-}
+// // CLEAR URL
+// remove_hash_from_url();
+// function remove_hash_from_url()
+// {
+//     var uri = window.location.toString();
+//     if (uri.indexOf("#") > 0) {
+//         var clean_uri = uri.substring(0, uri.indexOf("#"));
+//     }
+// }
 
 $(window).on('beforeunload', function() {
     $(window).scrollTop(0);
+});
+
+$(document).ready(function() {
+    $('#wrapper').fullpage({
+        sectionsColor: ['', '', '', '', ''],
+        anchors: ['home', 'device', 'works', 'profit', 'contact'],
+         menu: '.menu',
+        showActiveTooltip: true
+
+    });
 });

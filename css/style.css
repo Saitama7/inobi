@@ -120,6 +120,15 @@ a {
 /* MAIN */
 #home {
     position: relative;
+    z-index: 2;
+}
+#planet {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+#planet canvas{
+    background-color: transparent;
 }
 /*ANIMATE-DEVICE*/
 .options {

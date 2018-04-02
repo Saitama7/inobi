@@ -55,7 +55,7 @@ if touchScroll is false - update index
         $window = $(window),
         portHeight,
         top = $window.scrollTop(),
-        scrollable = false,
+        scrollable = true,
         locked = false,
         scrolled = false,
         manualScroll,
@@ -65,7 +65,7 @@ if touchScroll is false - update index
         scrollSamples = [],
         scrollTime = new Date().getTime(),
         firstLoad = true,
-        initialised = false,
+        initialised = true,
         destination = 0,
         wheelEvent = 'onwheel' in document ? 'wheel' : document.onmousewheel !== undefined ? 'mousewheel' : 'DOMMouseScroll',
         settings = {
@@ -81,7 +81,7 @@ if touchScroll is false - update index
             standardScrollElements: false,
             setHeights: true,
             overflowScroll:true,
-            updateHash: true,
+            updateHash: false,
             touchScroll:true,
             before:function() {},
             after:function() {},
@@ -134,7 +134,7 @@ if touchScroll is false - update index
                     }
 
                 } else {
-                    window.location.hash = names[index];
+                    // window.location.hash = names[index];
                 }
             }
 
