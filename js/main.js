@@ -1,6 +1,10 @@
 jQuery(function() {
+     disableScrolling();
     setTimeout(function() {
         animateMenu(height);
+        setTimeout(function () {
+            enableScrolling();
+        },2000);
     },500);
 
     var height = 49;
@@ -40,6 +44,15 @@ $(document).ready(function () {
     $.scrollify.instantMove("#home");
     window.location.hash = '';
 });
+function disableScrolling(){
+    var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){window.scrollTo(0, 0);};
+}
+function enableScrolling(){
+    window.onscroll=function(){};
+}
+
 jQuery(function() {
     jQuery('.animate-menu ul li').click(function () {
         var clName = jQuery(this).attr('class');
@@ -83,8 +96,8 @@ $.scrollify({
     setHeights: true,
     overflowScroll: false,
     updateHash: false,
-    touchScroll:true,
-    scrolled:true,
+    touchScroll:false,
+    scrolled:false,
     before:function() {},
     after:function() {},
     afterResize:function() {},

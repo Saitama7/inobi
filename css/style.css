@@ -389,7 +389,16 @@ button:hover {
 }
 
 
-
+/*GLOBUS*/
+#home {
+    position: relative;
+}
+#rotatingGlobe {
+    position: absolute;
+    top: 13%;
+    left: 43%;
+    z-index: -1;
+}
 
 
 
