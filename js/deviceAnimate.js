@@ -1,7 +1,4 @@
 jQuery(function () {
-//     setTimeout(function() {
-//         animateDevice(50);
-//     },500);
     var target = $('.animate-device');
     var targetPos = target.offset().top;
     var winHeight = $(window).height();
@@ -23,7 +20,6 @@ jQuery(function () {
 
     var i = 0;
     jQuery('.animate-device ul li').each(function (e) {
-        console.log(jQuery(this).attr('class'));
         jQuery(this).attr('class', "dli-"+(height + i));
         i = i + 50;
     });
@@ -51,4 +47,12 @@ jQuery(function () {
     }
 });
 
+jQuery(function () {
+    $("#gps").mouseover(function(){
+        $("#gpsImg").addClass('faa-burst animated');
+    });
+    $("#gps").mouseout(function(){
+        $("#gpsImg").removeClass('faa-burst animated');
+    });
+});
 

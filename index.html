@@ -25,9 +25,8 @@
                                 <div class="line"></div>
                                 <ul>
                                     <li data-menuanchor="home"><a href="#home"><span>Home</span> <span class='round'></span></a></li>
-                                    <li data-menuanchor="device"><a href="#device" id="a-device"><span>Device</span> <span class='round'></span></a></li>
-                                    <li data-menuanchor="works"><a href="#works"><span>Works</span> <span class='round'></span></a></li>
-                                    <li data-menuanchor="profit"><a href="#profit" ><span>Profit</span> <span class='round'></span></a></li>
+                                    <li data-menuanchor="solution"><a href="#solution"><span>Solution</span> <span class='round'></span></a></li>
+                                    <li data-menuanchor="profit"><a href="#benefit" ><span>Benefit</span> <span class='round'></span></a></li>
                                     <li data-menuanchor="contact"><a href="#contact" ><span>Contact</span> <span class='round'></span></a></li>
                                 </ul>
                                 <div class="bus"><img src="uploads/marker_bus.png" id="m-bus" width="20" height="25" alt=""></div>
@@ -36,34 +35,38 @@
                     </div>
                 </header>
                 <div class="smart">
-                    <p>Monitor public transport with</p>
+                    <p>Monitor public transport in real time with</p>
                     <h1><span></span> Inobi Smart Public Transport <span></span></h1>
                 </div>
             </section>
-            <section id="device" class="container panel" data-section-name="device">
+            <section id="solution" class="container panel" data-section-name="solution">
                 <div class="description">
-                    <h1>Inobi Device</h1>
-                    <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus enim eveniet fugiat in itaque necessitatibus odit officiis qui quibusdam veniam.</p>
+                    <h1>Inobi as a step towards the Smart City</h1>
+                    <p> Inobi Smart Public Transport is a unique combination of proprietary hardware, software and
+                        firmware tailor-made to deliver multiple technological solutions. Our complete smart package
+                        solution provides the necessary tools and allows to monitor, control and enhance operation of
+                        transport operators based on Real Time Data and smart reports.</p>  
                 </div>
                 <div class="device">
                     <div class="row">
-                        <div class="col-6">
+                        <div class="col">
                             <div class="deviceImg">
                                 <span id="gpsImg"></span>
                                 <span></span>
                                 <span></span>
                             </div>
                         </div>
-                        <div class="col-6">
+                        <div class="col">
                             <div class="options">
                                 <div class="animate-device">
                                     <div class="dLine"></div>
                                     <ul>
-                                        <a href="#" id="gps"><li ><span class='round '></span> GPS </li></a>
-                                        <a><li ><span class='round'></span> Wi-Fi</li></a>
-                                        <a><li ><span class='round'></span> Speaker </li></a>
-                                        <a><li><span class='round'></span> Passenger Counter </li></a>
-                                        <a><li><span class='round'></span> Video Streaming</li></a>
+                                        <li id="gps"><span class='round '></span> GPS module </li>
+                                        <li ><span class='round'></span> Wi-Fi</li>
+                                        <li ><span class='round'></span> Speaker Module </li>
+                                        <li><span class='round'></span> Passenger counter </li>
+                                        <li><span class='round'></span> ABD reader</li>
+                                        <li><span class='round'></span> Video output</li>
                                     </ul>
                                 </div>
                             </div>
@@ -71,19 +74,32 @@
                     </div>
                 </div>
             </section>
-            <section id="works" class="container panel" data-section-name="works">
-                <div class="work">
-                    <h1>How It Works</h1>
-                    <ol>
-                        <li> Install on buses</li>
-                        <li> Deploy the server</li>
-                        <li> Track your buses</li>
-                    </ol>
-                </div>
-            </section>
-            <section id="profit" class="container panel" data-section-name="profit">
+            <section id="benefit" class="container panel" data-section-name="benefit">
                 <div class="profit">
-                        <h1>Profit</h1>
+                        <h1>Benefit</h1>
+                    <div class="operators">
+                        <img src="uploads/operators.png" alt="">
+                        <h3>For Operators</h3>
+                        <ul>
+                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
+                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
+                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
+                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
+                        </ul>
+                    </div>
+                    <div class="passengers">
+                        <img src="uploads/passengers.png" alt="">
+                        <h3>For Passengers</h3>
+                        <ul>
+                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
+                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
+                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
+                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="profit">
+                        <h1>Benefit</h1>
                     <div class="operators">
                         <img src="uploads/operators.png" alt="">
                         <h3>For Operators</h3>
@@ -261,13 +277,13 @@
   // (world-110m-withlakes.json) so we can render lakes.
   globe.loadPlugin(planetaryjs.plugins.earth({
     topojson: { file:   '/js/planetary/lib/world-110m-withlakes.json' },
-    oceans:   { fill:   'transparent' },
-    land:     { fill:   'lightgrey' },
-    borders:  { stroke: 'limegreen' }
+    oceans:   { fill:   '#f4f5f8' },
+    land:     { fill:   '#dee2ea' },
+    borders:  { stroke: '#ffffff' }
   }));
   // Load our custom `lakes` plugin to draw lakes; see below.
   globe.loadPlugin(lakes({
-    fill: 'blue'
+    fill: '#dee2ea'
   }));
   // The `pings` plugin draws animated pings on the globe.
   globe.loadPlugin(planetaryjs.plugins.pings());
@@ -287,34 +303,52 @@
     }
   }));
   // Set up the globe's initial scale, offset, and rotation.
-  globe.projection.scale(200).translate([200, 200]).rotate([0, -10, 0]);
+  globe.projection.scale(280).translate([280, 280]).rotate([-10, -10, -15]);
 
   // Every few hundred milliseconds, we'll draw another random ping.
-  var colors = ['blue'];
-  var Bishkek = ['74.5900000','42.8700000'];
-  var Moscow = ['37.6155600','55.7522200'];
-  var c1 = ['30.3141300','59.9386300'];
-  var c2 = ['2.1589900','41.3887900'];
-  var c3 = ['-74.0817500','4.6097100'];
-  var c4 = ['-56.1881600','-34.9032800'];
-  var c5 = ['-0.1257400','51.5085300'];
-  var c6 = ['2.3488000','48.8534100'];
-  var c7 = ['55.1712800','25.0657000'];
-  var c8 = ['32.8542700','39.9198700'];
-  var c9 = ['139.6917100','35.6895000'];
-  var c10 = ['126.9784000','37.5660000'];
-  var c11 = ['116.3972300','39.9075000'];
-  var c12 = ['-74.0059700','40.7142700'];
-  var c13 = ['-122.4194200','37.7749300'];
-  var c14 = ['-118.2436800','34.0522300'];
-  var coords = [Bishkek,Moscow,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14];
+var colors = ['blue'];
+var Bishkek = ['74.5900000','42.8700000'];
+var Moscow = ['37.6155600','55.7522200'];
+var AbuDhabi = ['54.3773','24.4539'];
+var Dubai = ['55.1712800','25.0657000'];
+var Capetown = ['18.4241','33.9249'];
+var Harrare = ['31.0335','17.8252'];
+var Nairobi = ['36.8219','1.2921'];
+var Cairo = ['31.2357','30.0444'];
+var Alger = ['1.6596','28.0339'];
+var Sydney  = ['151.2073200','-33.8678500'];
+var Canberra  = ['149.1280700','-35.2834600']; 
+var Wellington  = ['174.7762','-41.2865'];
+var Brasil  = ['-47.8822','-15.7942'];
+var RioDeJaneiro = ['43.1729', '22.9068'];
+var Antananarivoo = ['47.5079','18.8792'];
+var BuenosAires = ['58.3816','34.6037'];
+var Ottawa = ['-75.6981200','45.4111700'];
+var Vancouver = ['49.2827','123.1207'];
+var Toronto = ['-79.4163000','43.7001100'];
+var Halifax = ['63.5752','44.6488'];
+var c1 = ['30.3141300','59.9386300'];
+var c2 = ['2.1589900','41.3887900'];
+var c3 = ['-74.0817500','4.6097100'];
+var c4 = ['-56.1881600','-34.9032800'];
+var c5 = ['-0.1257400','51.5085300'];
+var c6 = ['2.3488000','48.8534100'];
+var c7 = ['55.1712800','25.0657000'];
+var c8 = ['32.8542700','39.9198700'];
+var c9 = ['139.6917100','35.6895000'];
+var c10 = ['126.9784000','37.5660000'];
+var c11 = ['116.3972300','39.9075000'];
+var c12 = ['-74.0059700','40.7142700'];
+var c13 = ['-122.4194200','37.7749300'];
+var c14 = ['-118.2436800','34.0522300'];
+var coords = [Bishkek,Moscow,AbuDhabi,Capetown,Harrare,Nairobi,Cairo,Alger,Sydney,Canberra,Wellington,Brasil,RioDeJaneiro,Antananarivoo,BuenosAires,Ottawa,Vancouver,Toronto,Halifax,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14];
   setInterval(function() {
     // var lng = Math.random() * 360 - 180;
     // console.log(lat);
     // console.log(lng);
      var color = colors[Math.floor(Math.random() * colors.length)];
      var coord = coords[Math.floor(Math.random() * coords.length)];
-     globe.plugins.pings.add(coord[0],coord[1], {color : color, ttl: 5555, angle: 3});
+     globe.plugins.pings.add(coord[0],coord[1], {color : color, ttl: 1500, angle: 1.5});
   }, 10);
 
   var canvas = document.getElementById('rotatingGlobe');

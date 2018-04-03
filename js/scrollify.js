@@ -129,7 +129,7 @@ if touchScroll is false - update index
                         history.replaceState(null, null, names[index]);
                     } catch (e) {
                         if(window.console) {
-                            console.warn("Scrollify warning: Page must be hosted to manipulate the hash value.");
+                            // console.warn("Scrollify warning: Page must be hosted to manipulate the hash value.");
                         }
                     }
 
@@ -162,7 +162,7 @@ if touchScroll is false - update index
                 if(window.location.hash.length && settings.sectionName && window.console) {
                     try {
                         if($(window.location.hash).length) {
-                            console.warn("Scrollify warning: ID matches hash value - this will cause the page to anchor.");
+                            // console.warn("Scrollify warning: ID matches hash value - this will cause the page to anchor.");
                         }
                     } catch (e) {}
                 }
@@ -664,7 +664,7 @@ if touchScroll is false - update index
                 elements[i] = $this;
                 try {
                     if($(names[i]).length && window.console) {
-                        console.warn("Scrollify warning: Section names can't match IDs - this will cause the browser to anchor.");
+                        // console.warn("Scrollify warning: Section names can't match IDs - this will cause the browser to anchor.");
                     }
                 } catch (e) {}
 
@@ -715,8 +715,6 @@ if touchScroll is false - update index
             if(typeof panel === 'string') {
                 if (names[z]===panel) {
                     index = z;
-                    console.log(z);
-                    console.log(instant);
                     //index, instant, callbacks, toTop
                     animateScroll(z,instant,true,true);
                 }
@@ -834,7 +832,7 @@ if touchScroll is false - update index
             settings = $.extend(settings, updatedOptions);
             util.handleUpdate();
         } else if(window.console) {
-            console.warn("Scrollify warning: setOptions expects an object.");
+            // console.warn("Scrollify warning: setOptions expects an object.");
         }
     };
     $.scrollify = scrollify;

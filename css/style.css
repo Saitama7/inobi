@@ -3,12 +3,12 @@
     src: url('../fonts/gilroy.otf');
 }
 * {
-    color: #0273d4;
+    color: rgb(0,136,204) !important;
     font-size: 17px;
     font-family: Gilroy, sans-serif;
 }
 p, li {
-    color: #77909C;
+    color: #77909C !important;
 }
 
 /* HEADER */
@@ -136,6 +136,9 @@ a {
     width:60%;
     margin-top: 7%;
 }
+.stop {
+    top:91.6416px !important;
+}
 .animate-device {
     width: 400px;
     position: relative;
@@ -218,13 +221,8 @@ span {
     display: block;
     position: relative;
 }
-.device img {
-    width: 90%;
-    float: left;
-    margin-top: 7%;
-}
 .deviceImg {
-    background: url("../uploads/iot.jpg") no-repeat center center;
+    background: url("../uploads/inobi_device.jpg") no-repeat center center;
     background-size: contain;
     position: relative;
     width: 100%;
@@ -243,21 +241,6 @@ span {
 }
 .faa-burst {
     border: 1px solid blue;
-}
-.work {
-    text-align: center;
-    height: 40%;
-}
-.work ol {
-    float: left;
-    width: 16%;
-}
-.work li {
-    list-style-type: decimal;
-    line-height: 3em;
-}
-.work h1 {
-    padding: 10% 4% 5% 0;
 }
 .profit {
     padding: 2% 8% 1% 8%;
@@ -404,8 +387,37 @@ button.contact-btn:hover {
 /* FOOTER*/
 
 /*MEDIA*/
-
-
-
-
-
+@media all and (max-width: 400px) {
+    /*FIRST SCREEN*/
+    #rotatingGlobe {
+        top: 40%;
+        left: 10%;
+        z-index: -1;
+    }
+    canvas {
+        width: 300px !important;
+        height: auto !important;
+    }
+    .animate-menu {
+        display: none !important;
+    }
+    #wrapper {
+        padding: 10px !important;
+    }
+    .smart {
+        padding: 6% 2% 0 2%;
+        text-align: center;
+    }
+    h1 {
+        font-size: 2.40rem;
+    }
+    /*END FIRST SCREEN*/
+    
+    /*SECOND SCREEN*/
+    .description{
+        width: 100% !important;
+    }
+    .deviceImg {
+        height: 170px;
+    }
+}

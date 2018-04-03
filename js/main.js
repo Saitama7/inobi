@@ -7,11 +7,10 @@ jQuery(function() {
         },2000);
     },500);
 
-    var height = 49;
+    var height = 50;
 
     var i = 0;
     jQuery('.animate-menu ul li').each(function (e) {
-        console.log(jQuery(this).attr('class'));
         jQuery(this).attr('class', "li-"+(height + i));
         i = i + height;
     });
@@ -62,44 +61,59 @@ jQuery(function() {
         clName = parseInt(clName);
         jQuery('.bus').animate({
             top: -55 + clName + 'px'
-        },1000);
+        },400);
         $.scrollify.move(hrf);
     });
 });
 
-jQuery(function () {
-    $("#gps").mouseover(function(){
-        $("#gpsImg").addClass('faa-burst animated');
-    });
-    $("#gps").mouseout(function(){
-        $("#gpsImg").removeClass('faa-burst animated');
-    });
-});
 
-$(window).scroll(function () {
-    var winScrollTop = $(window).scrollTop();
-    var elmnt = document.getElementById("wrapper");
-    var y = elmnt.scrollHeight;
-    var top =  (winScrollTop * 249 / y ) - 6;
-    $('.bus').css('top', top);
-});
+// $(window).scroll(function () {
+//     var winScrollTop = $(window).scrollTop();
+//     var elmnt = document.getElementById("wrapper");
+//     var y = elmnt.scrollHeight;
+//     var top =  (winScrollTop * 190 / y ) - 6;
+//     $('.bus').css('top', top);
+// });
 
 $.scrollify({
     section : ".panel",
     sectionName : "section-name",
     interstitialSection : "",
     easing: "easeOutExpo",
-    scrollSpeed: 1500,
+    scrollSpeed: 1000,
     offset : 0,
-    scrollbars: false,
+    scrollbars: true,
     standardScrollElements: "",
     setHeights: true,
-    overflowScroll: false,
-    updateHash: false,
-    touchScroll:false,
+    overflowScroll: true,
+    updateHash: true,
+    touchScroll:true,
     scrolled:false,
-    before:function() {},
-    after:function() {},
+    before:function(i) {
+          if(i===0) {
+            $('.bus').animate({
+                top : -6 + 'px'
+            },400);
+        }else if(i===1) {
+            $('.bus').animate({
+                top : 45 + 'px'
+            },400);
+        } else if(i===2){
+            $.scrollify.update();
+            $('.bus').animate({
+                top : 95 + 'px'
+            },400);
+        } else if(i===3){
+            $('.bus').animate({
+                top : 145 + 'px'
+            },100);
+        }
+    },
+    after:function(i) {
+        if(i===2){
+            $.scrollify.update();
+        }
+    },
     afterResize:function() {},
     afterRender:function() {}
 });
