@@ -377,8 +377,7 @@ body { overflow: -moz-scrollbars-none; }
     line-height: 1.5!important;
     box-shadow: 0 34px 50px -6px grey;
 }
->>>>>>> 0916843edec1b49df25f689838da890d6ebabaa1
-button:hover {
+button.contact-btn:hover {
     background-color: #fafafa !important;
     border-color: #fafcfc !important;
     color: #0273d4 !important;
@@ -400,12 +399,11 @@ button:hover {
     z-index: -1;
 }
 
-
-
 /*END MAIN*/
 
 /* FOOTER*/
 
+/*MEDIA*/
 
 
 

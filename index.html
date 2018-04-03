@@ -7,10 +7,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/animation.min.css">
-    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="body">
         <div id="wrapper">
@@ -135,7 +134,7 @@
                         <div class="form-group">
                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Your message . . ."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary contact-btn">Submit</button>
                     </div>
                 </div>
             </section>
@@ -291,7 +290,7 @@
   globe.projection.scale(200).translate([200, 200]).rotate([0, -10, 0]);
 
   // Every few hundred milliseconds, we'll draw another random ping.
-  var colors = ['red', 'yellow', 'white', 'orange', 'green', 'cyan', 'pink'];
+  var colors = ['blue'];
   var Bishkek = ['74.5900000','42.8700000'];
   var Moscow = ['37.6155600','55.7522200'];
   var c1 = ['30.3141300','59.9386300'];
@@ -315,8 +314,8 @@
     // console.log(lng);
      var color = colors[Math.floor(Math.random() * colors.length)];
      var coord = coords[Math.floor(Math.random() * coords.length)];
-     globe.plugins.pings.add(coord[0],coord[1], {color : color, ttl: 200, angle: Math.random() * 10 });
-  }, 50);
+     globe.plugins.pings.add(coord[0],coord[1], {color : color, ttl: 5555, angle: 3});
+  }, 10);
 
   var canvas = document.getElementById('rotatingGlobe');
   // Special code to handle high-density displays (e.g. retina, some phones)
