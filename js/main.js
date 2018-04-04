@@ -1,11 +1,29 @@
+$(document).ready(function () {
+    $.scrollify.instantMove("#home");
+    window.location.hash = 'home';
+});
+function disableScrolling(){
+    var x=window.scrollX;
+    var y=window.scrollY;
+    window.onscroll=function(){window.scrollTo(0, 0);};
+}
+function enableScrolling(){
+    window.onscroll=function(){};
+}
+$(window).on('beforeunload', function() {
+    
+    $(window).scrollTop(0);
+
+});
+
 jQuery(function() {
      disableScrolling();
     setTimeout(function() {
         animateMenu(height);
-        setTimeout(function () {
-            enableScrolling();
-        },2000);
     },500);
+    setTimeout(function () {
+        enableScrolling();
+    },2000);
 
     var height = 50;
 
@@ -39,18 +57,7 @@ jQuery(function() {
         );
     }
 });
-$(document).ready(function () {
-    $.scrollify.instantMove("#home");
-    window.location.hash = '';
-});
-function disableScrolling(){
-    var x=window.scrollX;
-    var y=window.scrollY;
-    window.onscroll=function(){window.scrollTo(0, 0);};
-}
-function enableScrolling(){
-    window.onscroll=function(){};
-}
+
 
 jQuery(function() {
     jQuery('.animate-menu ul li').click(function () {
@@ -65,15 +72,6 @@ jQuery(function() {
         $.scrollify.move(hrf);
     });
 });
-
-
-// $(window).scroll(function () {
-//     var winScrollTop = $(window).scrollTop();
-//     var elmnt = document.getElementById("wrapper");
-//     var y = elmnt.scrollHeight;
-//     var top =  (winScrollTop * 190 / y ) - 6;
-//     $('.bus').css('top', top);
-// });
 
 $.scrollify({
     section : ".panel",
@@ -116,10 +114,4 @@ $.scrollify({
     },
     afterResize:function() {},
     afterRender:function() {}
-});
-
-$(window).on('beforeunload', function() {
-    
-    $(window).scrollTop(0);
-
 });

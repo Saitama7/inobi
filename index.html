@@ -8,8 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="css/animation.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 </head>
 <body id="body">
         <div id="wrapper">
@@ -17,14 +19,14 @@
                 <!-- <div id="planet"></div> -->
                 <canvas id='rotatingGlobe' width='700' height='700'
                 style='width: 700px; height: 700px; cursor: move;'></canvas>
-                <header class="container">
+                <header class="">
                     <div class="nav-menu">
                         <img src="uploads/logo.png" alt="inobi" class="logo">
                         <div class="menu">
                             <div class="animate-menu">
                                 <div class="line"></div>
                                 <ul>
-                                    <li data-menuanchor="home"><a href="#home"><span>Home</span> <span class='round'></span></a></li>
+                                    <li data-menuanchor="home"><a href="#home"><span>Home</span><span class='round'></span></a></li>
                                     <li data-menuanchor="solution"><a href="#solution"><span>Solution</span> <span class='round'></span></a></li>
                                     <li data-menuanchor="profit"><a href="#benefit" ><span>Benefit</span> <span class='round'></span></a></li>
                                     <li data-menuanchor="contact"><a href="#contact" ><span>Contact</span> <span class='round'></span></a></li>
@@ -75,55 +77,61 @@
                 </div>
             </section>
             <section id="benefit" class="container panel" data-section-name="benefit">
-                <div class="profit">
-                        <h1>Benefit</h1>
-                    <div class="operators">
-                        <img src="uploads/operators.png" alt="">
-                        <h3>For Operators</h3>
-                        <ul>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                        </ul>
-                    </div>
-                    <div class="passengers">
-                        <img src="uploads/passengers.png" alt="">
-                        <h3>For Passengers</h3>
-                        <ul>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                        </ul>
+                <div class="description">
+                    <h1>Benefit</h1>
+                    <p> Inobi Smart Public Transport is a unique combination of proprietary hardware, software and
+                        firmware tailor-made to deliver multiple technological solutions. Our complete smart package
+                        solution provides the necessary tools and allows to monitor, control and enhance operation of
+                        transport operators based on Real Time Data and smart reports.</p>  
+                </div>
+                <div class="busLoop">
+                    <div class="row">
+                        <div class="col">
+                            <div id="busLoopDiv">
+                                <!-- <canvas id="busLoopAnim"></canvas> -->
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="busLoopDesc">
+                                <ul>
+                                    <li>fdsfsdf</li>
+                                    <li>asdfasdfasd</li>
+                                    <li>asdfsadfsaf</li>
+                                    <li>sdgdsgdf</li>
+                                    <li>dsgdsf</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="profit">
-                        <h1>Benefit</h1>
-                    <div class="operators">
-                        <img src="uploads/operators.png" alt="">
-                        <h3>For Operators</h3>
-                        <ul>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                        </ul>
-                    </div>
-                    <div class="passengers">
-                        <img src="uploads/passengers.png" alt="">
-                        <h3>For Passengers</h3>
-                        <ul>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                            <li> Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, error.</li>
-                        </ul>
+                 <div class="mobApp">
+                    <h1 class="text-center m-0">Passengers</h1>
+                    <div class="row">
+                        <div class="col">
+                            <div id="mobApp">
+                                <img src="uploads/iphone.png" alt="">
+                                <div id="loadSvg"></div>
+                                <div class="mobAppContainer">
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="busLoopDesc">
+                                <ul>
+                                    <li>fdsfsdf</li>
+                                    <li>asdfasdfasd</li>
+                                    <li>asdfsadfsaf</li>
+                                    <li>sdgdsgdf</li>
+                                    <li>dsgdsf</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
-            <section id="contact" data-section-name="contact" class="panel">
-                <div class="container">
+            <section id="contact" data-section-name="contact" class="container panel">
+                <div>
                     <div class="in-touch">
                         <h1>Get in Touch</h1>
                         <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam cumque deleniti dolore fuga fugit molestias
@@ -138,19 +146,6 @@
                                 <option value="3">Three</option>
                             </select>
                         </div>
-                        <div class="input">
-                            <input class="form-control form-control-sm transparent" type="text" placeholder="Company">
-                        </div>
-                        <div class="input float-l limegreen">
-                            <input class="form-control form-control-sm transparent " type="text" placeholder="Name">
-                        </div>
-                        <div class="input float-r limegreen">
-                            <input class="form-control form-control-sm transparent" type="text" placeholder="E-mail">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Your message . . ."></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary contact-btn">Submit</button>
                     </div>
                 </div>
             </section>
@@ -158,268 +153,25 @@
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/deviceAnimate.js"></script>
 <script type="text/javascript" src="js/url.min.js"></script>
-<script type="text/javascript" src="js/three/three.min.js"></script>
+<!-- <script type="text/javascript" src="js/three/three.min.js"></script>
 <script type="text/javascript" src="js/three/projector.js"></script>
 <script type="text/javascript" src="js/three/canvas-render.js"></script>
-<script type="text/javascript" src="js/three/stats.min.js"></script>
-<script type="text/javascript" src="js/scrollify.js"></script>
+<script type="text/javascript" src="js/three/stats.min.js"></script> -->
  <script type='text/javascript' src='js/planetary/lib/topojson.v1.min.js'></script>
  <script type='text/javascript' src='js/planetary/lib/d3.v3.min.js'></script>
 <script type="text/javascript" src="js/planetary/planetaryjs.min.js"></script>
-<!-- <script type="text/javascript" src="js/planetary/planetApp.js"></script> -->
+<script type="text/javascript" src="js/planetary/planetApp.js"></script>
+<script type="text/javascript" src="js/busLoopAnim.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenLite.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/CSSPlugin.min.js"></script>
+<script type="text/javascript" src="js/mobAppAnim.js"></script>
+<script type="text/javascript" src="js/scrollify.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 
-        <!-- <script>
-            var SEPARATION = 100, AMOUNTX = 50, AMOUNTY = 50;
-            var container, stats;
-            var camera, scene, renderer;
-            var particles, particle, count = 0;
-            var mouseX = 0, mouseY = 0;
-            var windowHalfX = window.innerWidth / 2;
-            var windowHalfY = window.innerHeight / 2;
-            init();
-            animate();
-            function init() {
-                container = document.getElementById('planet');
-                camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
-                camera.position.z = 1000;
-                scene = new THREE.Scene();
-                particles = new Array();
-                var PI2 = Math.PI * 2;
-                var material = new THREE.SpriteCanvasMaterial( {
-                    color: 0x0273d4,
-                    program: function ( context ) {
-                        context.beginPath();
-                        context.arc( 0, 0, 0.5, 0, PI2, true );
-                        context.fill();
-                    }
-                } );
-                var i = 0;
-                for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
-                    for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
-                        particle = particles[ i ++ ] = new THREE.Sprite( material );
-                        particle.position.x = ix * SEPARATION - ( ( AMOUNTX * SEPARATION ) / 2 );
-                        particle.position.z = iy * SEPARATION - ( ( AMOUNTY * SEPARATION ) / 2 );
-                        scene.add( particle );
-                    }
-                }
-                renderer = new THREE.CanvasRenderer();
-                renderer.setPixelRatio( window.devicePixelRatio );
-                renderer.setSize( window.innerWidth, window.innerHeight );
-                container.appendChild( renderer.domElement );
-                stats = new Stats();
-                // container.appendChild( stats.dom );
-                document.addEventListener( 'mousemove', onDocumentMouseMove, false );
-                document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-                document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-                //
-                window.addEventListener( 'resize', onWindowResize, false );
-            }
-            function onWindowResize() {
-                windowHalfX = window.innerWidth / 2;
-                windowHalfY = window.innerHeight / 2;
-                camera.aspect = window.innerWidth / window.innerHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize( window.innerWidth, window.innerHeight );
-            }
-            //
-            function onDocumentMouseMove( event ) {
-                mouseX = event.clientX - windowHalfX;
-                mouseY = event.clientY - windowHalfY;
-            }
-            function onDocumentTouchStart( event ) {
-                if ( event.touches.length === 1 ) {
-                    event.preventDefault();
-                    mouseX = event.touches[ 0 ].pageX - windowHalfX;
-                    mouseY = event.touches[ 0 ].pageY - windowHalfY;
-                }
-            }
-            function onDocumentTouchMove( event ) {
-                if ( event.touches.length === 1 ) {
-                    event.preventDefault();
-                    mouseX = event.touches[ 0 ].pageX - windowHalfX;
-                    mouseY = event.touches[ 0 ].pageY - windowHalfY;
-                }
-            }
-            //
-            function animate() {
-                requestAnimationFrame( animate );
-                render();
-                stats.update();
-            }
-            function render() {
-                camera.position.x += ( mouseX - camera.position.x ) * .05;
-                camera.position.y += ( - mouseY - camera.position.y ) * .05;
-                camera.lookAt( scene.position );
-                var i = 0;
-                for ( var ix = 0; ix < AMOUNTX; ix ++ ) {
-                    for ( var iy = 0; iy < AMOUNTY; iy ++ ) {
-                        particle = particles[ i++ ];
-                        particle.position.y = ( Math.sin( ( ix + count ) * 0.3 ) * 50 ) +
-                            ( Math.sin( ( iy + count ) * 0.5 ) * 50 );
-                        particle.scale.x = particle.scale.y = ( Math.sin( ( ix + count ) * 0.3 ) + 1 ) * 4 +
-                            ( Math.sin( ( iy + count ) * 0.5 ) + 1 ) * 4;
-                    }
-                }
-                renderer.render( scene, camera );
-                count += 0.1;
-            }
-        </script> -->
-        <script>
-            (function() {
-  var globe = planetaryjs.planet();
-  // Load our custom `autorotate` plugin; see below.
-  globe.loadPlugin(autorotate(10));
-  // The `earth` plugin draws the oceans and the land; it's actually
-  // a combination of several separate built-in plugins.
-  //
-  // Note that we're loading a special TopoJSON file
-  // (world-110m-withlakes.json) so we can render lakes.
-  globe.loadPlugin(planetaryjs.plugins.earth({
-    topojson: { file:   '/js/planetary/lib/world-110m-withlakes.json' },
-    oceans:   { fill:   '#f4f5f8' },
-    land:     { fill:   '#dee2ea' },
-    borders:  { stroke: '#ffffff' }
-  }));
-  // Load our custom `lakes` plugin to draw lakes; see below.
-  globe.loadPlugin(lakes({
-    fill: '#dee2ea'
-  }));
-  // The `pings` plugin draws animated pings on the globe.
-  globe.loadPlugin(planetaryjs.plugins.pings());
-  // The `zoom` and `drag` plugins enable
-  // manipulating the globe with the mouse.
-  // globe.loadPlugin(planetaryjs.plugins.zoom({
-  //   scaleExtent: [400, 600]
-  // }));
-  globe.loadPlugin(planetaryjs.plugins.drag({
-    // Dragging the globe should pause the
-    // automatic rotation until we release the mouse.
-    onDragStart: function() {
-      this.plugins.autorotate.pause();
-    },
-    onDragEnd: function() {
-      this.plugins.autorotate.resume();
-    }
-  }));
-  // Set up the globe's initial scale, offset, and rotation.
-  globe.projection.scale(280).translate([280, 280]).rotate([-10, -10, -15]);
-
-  // Every few hundred milliseconds, we'll draw another random ping.
-var colors = ['blue'];
-var Bishkek = ['74.5900000','42.8700000'];
-var Moscow = ['37.6155600','55.7522200'];
-var AbuDhabi = ['54.3773','24.4539'];
-var Dubai = ['55.1712800','25.0657000'];
-var Capetown = ['18.4241','33.9249'];
-var Harrare = ['31.0335','17.8252'];
-var Nairobi = ['36.8219','1.2921'];
-var Cairo = ['31.2357','30.0444'];
-var Alger = ['1.6596','28.0339'];
-var Sydney  = ['151.2073200','-33.8678500'];
-var Canberra  = ['149.1280700','-35.2834600']; 
-var Wellington  = ['174.7762','-41.2865'];
-var Brasil  = ['-47.8822','-15.7942'];
-var RioDeJaneiro = ['43.1729', '22.9068'];
-var Antananarivoo = ['47.5079','18.8792'];
-var BuenosAires = ['58.3816','34.6037'];
-var Ottawa = ['-75.6981200','45.4111700'];
-var Vancouver = ['49.2827','123.1207'];
-var Toronto = ['-79.4163000','43.7001100'];
-var Halifax = ['63.5752','44.6488'];
-var c1 = ['30.3141300','59.9386300'];
-var c2 = ['2.1589900','41.3887900'];
-var c3 = ['-74.0817500','4.6097100'];
-var c4 = ['-56.1881600','-34.9032800'];
-var c5 = ['-0.1257400','51.5085300'];
-var c6 = ['2.3488000','48.8534100'];
-var c7 = ['55.1712800','25.0657000'];
-var c8 = ['32.8542700','39.9198700'];
-var c9 = ['139.6917100','35.6895000'];
-var c10 = ['126.9784000','37.5660000'];
-var c11 = ['116.3972300','39.9075000'];
-var c12 = ['-74.0059700','40.7142700'];
-var c13 = ['-122.4194200','37.7749300'];
-var c14 = ['-118.2436800','34.0522300'];
-var coords = [Bishkek,Moscow,AbuDhabi,Capetown,Harrare,Nairobi,Cairo,Alger,Sydney,Canberra,Wellington,Brasil,RioDeJaneiro,Antananarivoo,BuenosAires,Ottawa,Vancouver,Toronto,Halifax,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14];
-  setInterval(function() {
-    // var lng = Math.random() * 360 - 180;
-    // console.log(lat);
-    // console.log(lng);
-     var color = colors[Math.floor(Math.random() * colors.length)];
-     var coord = coords[Math.floor(Math.random() * coords.length)];
-     globe.plugins.pings.add(coord[0],coord[1], {color : color, ttl: 1500, angle: 1.5});
-  }, 10);
-
-  var canvas = document.getElementById('rotatingGlobe');
-  // Special code to handle high-density displays (e.g. retina, some phones)
-  // In the future, Planetary.js will handle this by itself (or via a plugin).
-  if (window.devicePixelRatio == 2) {
-    canvas.width = 800;
-    canvas.height = 800;
-    context = canvas.getContext('2d');
-    context.scale(2, 2);
-  }
-  // Draw that globe!
-  globe.draw(canvas);
-
-  // This plugin will automatically rotate the globe around its vertical
-  // axis a configured number of degrees every second.
-  function autorotate(degPerSec) {
-    // Planetary.js plugins are functions that take a `planet` instance
-    // as an argument...
-    return function(planet) {
-      var lastTick = null;
-      var paused = false;
-      planet.plugins.autorotate = {
-        pause:  function() { paused = true;  },
-        resume: function() { paused = false; }
-      };
-      // ...and configure hooks into certain pieces of its lifecycle.
-      planet.onDraw(function() {
-        if (paused || !lastTick) {
-          lastTick = new Date();
-        } else {
-          var now = new Date();
-          var delta = now - lastTick;
-          // This plugin uses the built-in projection (provided by D3)
-          // to rotate the globe each time we draw it.
-          var rotation = planet.projection.rotate();
-          rotation[0] += degPerSec * delta / 1000;
-          if (rotation[0] >= 180) rotation[0] -= 360;
-          planet.projection.rotate(rotation);
-          lastTick = now;
-        }
-      });
-    };
-  };
-
-  // This plugin takes lake data from the special
-  // TopoJSON we're loading and draws them on the map.
-  function lakes(options) {
-    options = options || {};
-    var lakes = null;
-
-    return function(planet) {
-      planet.onInit(function() {
-        // We can access the data loaded from the TopoJSON plugin
-        // on its namespace on `planet.plugins`. We're loading a custom
-        // TopoJSON file with an object called "ne_110m_lakes".
-        var world = planet.plugins.topojson.world;
-        lakes = topojson.feature(world, world.objects.ne_110m_lakes);
-      });
-
-      planet.onDraw(function() {
-        planet.withSavedContext(function(context) {
-          context.beginPath();
-          planet.path.context(context)(lakes);
-          context.fillStyle = options.fill || 'black';
-          context.fill();
-        });
-      });
-    };
-  };
-})();
-        </script>
+<script>
+    setTimeout(function () {
+        $(".mobAppContainer").load("mobApp.html");
+    },2000);
+</script>
 </body>
 </html>

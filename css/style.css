@@ -18,12 +18,12 @@ header {
 }
 section {
     display: block;
-    height: 100vh;
 }
 .container {
     padding: 0 !important;
-    min-width: 90% !important;
-    margin: 0 auto;
+    padding-top: 5% !important;
+    min-width: 70% !important;
+    margin-left:200px;
 }
 .nav-menu {
     padding: 2% 0 0 0;
@@ -199,7 +199,8 @@ a {
 /*END ANIMATE-DEVICE*/
 
 .smart {
-    padding: 15% 0 0 14%;
+    margin: 15% 0 0 5%;
+    width: 442px;
 }
 .smart p {
     padding-left: 4.5%;
@@ -210,12 +211,6 @@ span {
 .description {
     text-align: center;
     width: 80%;
-}
-.description p {
-    padding: 2% 0;
-}
-.description h1 {
-    padding-top: 2%;
 }
 .device {
     display: block;
@@ -242,55 +237,81 @@ span {
 .faa-burst {
     border: 1px solid blue;
 }
-.profit {
-    padding: 2% 8% 1% 8%;
-    text-align: center;
-    display: inline-block;
+/*BUS LOOP ANIMATION*/
+#busLoopDiv {
+    width: 100% !important;
 }
-.profit h1 {
-    padding-right: 2%;
-}
-.profit li {
-    line-height: 1.2em;
-}
-.profit ul {
-     padding: 3% 3% 0 0
-}
-.operators {
-    width: 49%;
+ #busLoopAnim {
+    display: block;
+    width: 40% !important;
+ }
+ .busLoopDesc{
     float: left;
-    text-align: center;
-    border-right: 1px solid #0273d4;
-    padding-right: 3%;
+    padding-top: 20%;
+ }
+ .busLoopDesc ul li {
+    line-height: 1rem !important;
+ }
+/*END BUS LOOP ANIMATION*/
+/*MOB APP*/
+.mobApp {
+    width: 80%;
+    margin-bottom: 5%;
 }
-  .operators  h3 {
-      padding-top: 7%;
-      color: limegreen;
-}
-  .operators img {
-      width: 25%;
-}
-.passengers {
-    width: 49%;
-    float: left;
-    text-align: center;
-    margin-left: 2%;
-}
-.passengers h3 {
-    padding-top: 2%;
-    color: limegreen;
-}
-.passengers img {
-    width: 25%;
-    height: 8.2em;
-}
+    #mobApp {
+        position: relative;
+        text-align: center;
+        width:500px;
+        margin-top: 50px;
+    }
+    #mobApp img {
+        position: relative;
+    }
+    .mobAppContainer{
+        position: absolute;
+        height: 340px;
+        width: 192px;
+        top: 54px;
+        left: 154px;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        background-color: #222222;
+    }
+    .mobAppContainer svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        fill:white;
+    }
+    .mobAppContainer .lines {
+        opacity: 0;
+    }
+    .mobAppContainer .line {
+        fill-rule: evenodd;
+        clip-rule: evenodd;
+        fill: white;
+    }
+    .mobAppContainer .lights {
+      opacity: 1;
+    }
+    .mobAppContainer .light {
+      fill-rule: evenodd;
+      clip-rule: evenodd;
+      fill: white;
+    }
+/*END MOB APP*/
+
 body::-webkit-scrollbar { width: 0 !important }
 body::-moz-viewport-scroll {width: 0 !important}
 body { -ms-overflow-style: none; }
 body { overflow: -moz-scrollbars-none; }
+#benefit {
+    margin-bottom: 150px;
+}
 .in-touch {
     width: 45vw;
-    margin: 0 auto;
+    margin: 0 147px;
 }
 .in-touch h1 {
     padding-top: 8vh;
@@ -377,8 +398,12 @@ button.contact-btn:hover {
 }
 #rotatingGlobe {
     position: absolute;
-    top: 13%;
+    top: 20%;
     left: 43%;
+    border-top-left-radius: 86%%;
+    border-top-right-radius: 100%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 100%;
     z-index: -1;
 }
 
