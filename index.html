@@ -6,8 +6,10 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Inobi Smart Public Transport</title>
+    <link rel="shortcut icon" href="/uploads/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <link rel="stylesheet" href="css/animation.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -17,8 +19,7 @@
         <div id="wrapper">
             <section class="container panel" id="home" data-section-name="home">
                 <!-- <div id="planet"></div> -->
-                <canvas id='rotatingGlobe' width='700' height='700'
-                style='width: 700px; height: 700px; cursor: move;'></canvas>
+                <canvas id='rotatingGlobe' width='700' height='700' cursor: move;'></canvas>
                 <header class="">
                     <div class="nav-menu">
                         <img src="uploads/logo.png" alt="inobi" class="logo">
@@ -28,7 +29,7 @@
                                 <ul>
                                     <li data-menuanchor="home"><a href="#home"><span>Home</span><span class='round'></span></a></li>
                                     <li data-menuanchor="solution"><a href="#solution"><span>Solution</span> <span class='round'></span></a></li>
-                                    <li data-menuanchor="profit"><a href="#benefit" ><span>Benefit</span> <span class='round'></span></a></li>
+                                    <li data-menuanchor="profit"><a href="#benefit" ><span>Benefits</span> <span class='round'></span></a></li>
                                     <li data-menuanchor="contact"><a href="#contact" ><span>Contact</span> <span class='round'></span></a></li>
                                 </ul>
                                 <div class="bus"><img src="uploads/marker_bus.png" id="m-bus" width="20" height="25" alt=""></div>
@@ -38,7 +39,7 @@
                 </header>
                 <div class="smart">
                     <p>Monitor public transport in real time with</p>
-                    <h1><span></span> Inobi Smart Public Transport <span></span></h1>
+                    <h1>Inobi Smart Public Transport</h1>
                 </div>
             </section>
             <section id="solution" class="container panel" data-section-name="solution">
@@ -54,9 +55,13 @@
                         <div class="col">
                             <div class="deviceImg">
                                 <span id="gpsImg"></span>
-                                <span></span>
-                                <span></span>
+                                <span id="wifiImg"></span>
+                                <span id="speakImg"></span>
+                                <span id="passenImg"></span>
+                                <span id="abdImg"></span>
+                                <span id="videoImg"></span>
                             </div>
+                            <span id="deviceDescrip" class="ml-5"></span>
                         </div>
                         <div class="col">
                             <div class="options">
@@ -64,11 +69,11 @@
                                     <div class="dLine"></div>
                                     <ul>
                                         <li id="gps"><span class='round '></span> GPS module </li>
-                                        <li ><span class='round'></span> Wi-Fi</li>
-                                        <li ><span class='round'></span> Speaker Module </li>
-                                        <li><span class='round'></span> Passenger counter </li>
-                                        <li><span class='round'></span> ABD reader</li>
-                                        <li><span class='round'></span> Video output</li>
+                                        <li id="wifi"><span class='round'></span> Wi-Fi</li>
+                                        <li id="speak"><span class='round'></span> Speaker Module </li>
+                                        <li id="passen"><span class='round'></span> Passenger counter </li>
+                                        <li id="abd"><span class='round'></span> ABD reader</li>
+                                        <li id="video"><span class='round'></span> Video output</li>
                                     </ul>
                                 </div>
                             </div>
@@ -78,93 +83,109 @@
             </section>
             <section id="benefit" class="container panel" data-section-name="benefit">
                 <div class="description">
-                    <h1>Benefit</h1>
-                    <p> Inobi Smart Public Transport is a unique combination of proprietary hardware, software and
-                        firmware tailor-made to deliver multiple technological solutions. Our complete smart package
-                        solution provides the necessary tools and allows to monitor, control and enhance operation of
-                        transport operators based on Real Time Data and smart reports.</p>  
+                    <h2 class="mb-3">Benefits for Transport Operators</h2>
+                    <p class="mt-3"> For authorities Inobi Smart Public Transport ensures optimization in fleet management with
+                        predictive and preventive maintenance reporting system, thus decreasing operational costs and
+                        making public transport journeys more convenient and attractive for passengers.
+
+                        Inobi brings technology to enhance performance, access Real Time statistics and optimize
+                        operations, monitoring the schedule of transport, location history, trips, number of passengers,
+                        charts and summary reports.
+                    </p>  
                 </div>
                 <div class="busLoop">
                     <div class="row">
                         <div class="col">
-                            <div id="busLoopDiv">
-                                <!-- <canvas id="busLoopAnim"></canvas> -->
-                            </div>
+                            <div id="busLoopDiv"></div>
                         </div>
                         <div class="col">
                             <div class="busLoopDesc">
+                                <div class="bLine"></div>
                                 <ul>
-                                    <li>fdsfsdf</li>
-                                    <li>asdfasdfasd</li>
-                                    <li>asdfsadfsaf</li>
-                                    <li>sdgdsgdf</li>
-                                    <li>dsgdsf</li>
+                                    <li><span class='round'></span> Real Time statistics</li>
+                                    <li><span class='round'></span> Transport schedule monitoring</li>
+                                    <li><span class='round'></span>Location history </li>
+                                    <li><span class='round'></span>Trip details</li>
+                                    <li><span class='round'></span>Number of passengers</li>
+                                    <li><span class='round'></span>Charts and summary reports</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
                  <div class="mobApp">
-                    <h1 class="text-center m-0">Passengers</h1>
+                    <h2 class="mb-3">Benefits for Passengers</h2>
+                    <p class="mt-3">Using our platform commuters will be able to create their travel itinerary and enjoy the
+                        accessibility, connectivity and availability of public transport.</p>
+                    <p>With Inobi App passengers will experience higher safety and punctuality, clearer and more
+                        relevant Real Time information, increased comfort and life quality.</p>
                     <div class="row">
                         <div class="col">
                             <div id="mobApp">
-                                <img src="uploads/iphone.png" alt="">
+                                <img src="uploads/iphone1.png" alt="">
                                 <div id="loadSvg"></div>
-                                <div class="mobAppContainer">
-                                    
-                                </div>
+                                <!-- <div class="mobAppContainer"></div> -->
                             </div>
                         </div>
                         <div class="col">
-                            <div class="busLoopDesc">
+                            <div class="mobAppDesc">
                                 <ul>
-                                    <li>fdsfsdf</li>
-                                    <li>asdfasdfasd</li>
-                                    <li>asdfsadfsaf</li>
-                                    <li>sdgdsgdf</li>
-                                    <li>dsgdsf</li>
+                                    <li><img src="uploads/benefits/smart-map.png" width="50" height="50" alt="Smart Map"><div class="ml-2 mt-6 appList">Monitor transport in real time</div></li>
+                                    <li><img src="uploads/benefits/routes.png" width="50" height="50" alt="Routes"><div class="ml-2 mt-6 appList">See all available routes, plan a trip</div></li>
+                                    <li><img src="uploads/benefits/alerts.png" width="50" height="50" alt="Alerts"><div class="ml-2 appList">Get notifications when your bus is approaching your location</div></li>
+                                    <li><img src="uploads/benefits/favorites.png" width="50" height="50" alt="Favorites"><div class="ml-2 appList">Select routes you’d likely to use for easy access</div></li>
                                 </ul>
+                            </div>
+                            <div class="btns">
+                               <a href="https://play.google.com/store/apps/details?id=kg.avisa.inobi" class="btn-store btn-store--google" onclick="ga('send', 'event', 'android-app', 'download')">
+                                  <div class="btn-store__text">
+                                     <p class="btn-store__description">
+                                        Download inobi now
+                                     </p>
+                                     <p class="btn-store__title">
+                                        Google Play
+                                     </p>
+                                  </div>
+                               </a>
+                               <a href="https://itunes.apple.com/us/app/inobi-%D1%82%D1%80%D0%B0%D0%BD%D1%81%D0%BF%D0%BE%D1%80%D1%82-%D0%B1%D0%B8%D1%88%D0%BA%D0%B5%D0%BA%D0%B0/id1219882645?ls=1&amp;mt=8" class="btn-store btn-store--apple" onclick="ga('send', 'event', 'appstore', 'download')">
+                                  <div class="btn-store__text">
+                                     <p class="btn-store__description">
+                                        Download inobi now
+                                     </p>
+                                     <p class="btn-store__title">
+                                        Apple Store
+                                     </p>
+                                  </div>
+                               </a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="contact" data-section-name="contact" class="container panel">
+           <section id="contact" data-section-name="contact" class="container panel">
                 <div>
                     <div class="in-touch">
                         <h1>Get in Touch</h1>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam cumque deleniti dolore fuga fugit molestias
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur, repellat.</p>
-                        <p>Lorem ipsum dolor sit
-                        amet, consectetur adipisicing elit. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Incidunt, similique?</p>
-                        <div class="select">
-                            <select class="custom-select custom-select-sm transparent">
-                                <option selected><p>Interested in</p></option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
+                        <p class="mm">We are happy to answer any questions you have</p>
+                        <p><i class="fas fa-map-marker-alt"></i>&nbsp Office 1, 5 Isanova Street, Bishkek, P.O. Box 720017, Kyrgyz Republic.</p>
+                        <p><i class="fas fa-phone"></i>&nbsp +996 312 586 555, +996 701 710 715</p>
+                        <p><i class="fas fa-envelope"></i>&nbsp join@inobi.mobi</p>
                     </div>
                 </div>
             </section>
         </div>
 <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/deviceAnimate.js"></script>
+<script type="text/javascript" src="js/benefitsAnime.js"></script>
 <script type="text/javascript" src="js/url.min.js"></script>
-<!-- <script type="text/javascript" src="js/three/three.min.js"></script>
-<script type="text/javascript" src="js/three/projector.js"></script>
-<script type="text/javascript" src="js/three/canvas-render.js"></script>
-<script type="text/javascript" src="js/three/stats.min.js"></script> -->
- <script type='text/javascript' src='js/planetary/lib/topojson.v1.min.js'></script>
- <script type='text/javascript' src='js/planetary/lib/d3.v3.min.js'></script>
+<script type='text/javascript' src='js/planetary/lib/topojson.v1.min.js'></script>
+<script type='text/javascript' src='js/planetary/lib/d3.v3.min.js'></script>
 <script type="text/javascript" src="js/planetary/planetaryjs.min.js"></script>
 <script type="text/javascript" src="js/planetary/planetApp.js"></script>
 <script type="text/javascript" src="js/busLoopAnim.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenLite.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/CSSPlugin.min.js"></script>
-<script type="text/javascript" src="js/mobAppAnim.js"></script>
+<script src="js/mobApp/tweenLite.min.js"></script>
+<script src="js/mobApp/CSSPlugin.min.js"></script>
+<script type="text/javascript" src="js/mobApp/mobAppAnim.js"></script>
 <script type="text/javascript" src="js/scrollify.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 

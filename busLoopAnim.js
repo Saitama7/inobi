@@ -1,5 +1,4 @@
-if ($(window).width() > 500) {
-    function cubicBezier(z1, z2, t) {
+function cubicBezier(z1, z2, t) {
     return (3 * z1 - 3 * z2 + 1) * t * t * t + (-6 * z1 + 3 * z2) * t * t + 3 * z1 * t;
 }
 function cubicBezierD(z1, z2, t) {
@@ -25,18 +24,17 @@ const app = {
     },
     colors: {
         bg: '#ffffff',
-        rect: '#dee2ea',
-        point: '#dee2ea',
-        path: '#158bcc',
-        value: '#158bcc',
-        bus: '#18a92d',
+        rect: '#0088CD',
+        point: '#0088CD',
+        path: '#0088CD',
+        value: '#0088CD',
         direction: 'rgba(0,0,0,0.2)'
     },
-    duration: 6000,
-    x1: 0.5 + Math.random(),
-    y1: Math.random(),
-    x2: Math.random(),
-    y2: 0.5 + Math.random(),
+    duration: 3000,
+    x1: 0.42,
+    y1: 0,
+    x2: 0.58,
+    y2: 1,
     toClientX: function (x) {
         return (app.canvas.width / 2 + app.rectSize * (x - 0.5)) / devicePixelRatio;
     },
@@ -51,16 +49,10 @@ app.ctx = app.canvas.getContext('2d');
 function onResize() {
     // app.canvas.width = innerWidth * devicePixelRatio;
     // app.canvas.height = innerHeight * devicePixelRatio;
-   
-    if ($(window).width() > 1900) {
-        app.canvas.width = 700;
-        app.canvas.height = 550;
-    } else {
-        app.canvas.width = 500;
-        app.canvas.height = 350;
-    }
-    app.rectSize = 0.5 * Math.min(app.canvas.width, app.canvas.height, 700 * devicePixelRatio);
-     // app.margin = 0.03 * app.canvas.width;
+    app.canvas.width = 500;
+    app.canvas.height = 500;
+    app.rectSize = 0.5 * Math.min(app.canvas.width, app.canvas.height, 800 * devicePixelRatio);
+    app.margin = 0.03 * app.canvas.width;
 }
 window.addEventListener('resize', onResize);
 onResize();
@@ -196,14 +188,14 @@ requestAnimationFrame(function (t0) {
         for (let t = 0; t <= 1; t += 0.1) {
             putPoint(t, px);
         }
-        putPointBus(t, px, -10, true);
+        putPoint(t, px, -10, true);
         ctx.restore();
     }
     function putPoint(t, px, labelPos, drawD) {
         const x = cubicBezier(app.x1, app.x2, t);
         const y = cubicBezier(app.y1, app.y2, t);
         ctx.beginPath();
-        ctx.arc(x, y, 3 * px, 0, 2 * Math.PI);
+        ctx.arc(x, y, 4 * px, 0, 2 * Math.PI);
         ctx.fillStyle = app.colors.value;
         ctx.fill();
         ctx.save();
@@ -225,46 +217,9 @@ requestAnimationFrame(function (t0) {
             ctx.beginPath();
             ctx.moveTo(x, y);
             ctx.lineTo(x + scale2 * dx, y + scale2 * dy);
-            ctx.strokeStyle = "red";
+            ctx.strokeStyle = app.colors.value;
             ctx.lineWidth = 2 * px;
             ctx.stroke();
         }
     }
-    
-    function putPointBus(t, px, labelPos, drawD) {
-        const x = cubicBezier(app.x1, app.x2, t);
-        const y = cubicBezier(app.y1, app.y2, t);
-        
-        if (drawD) {
-            const dx = cubicBezierD(app.x1, app.x2, t);
-            const dy = cubicBezierD(app.y1, app.y2, t);
-            const scale1 = hypot(ctx.canvas.width, ctx.canvas.height) / hypot(dx, dy);
-            ctx.beginPath();
-            ctx.moveTo(x - scale1 * dx, y - scale1 * dy);
-            ctx.lineTo(x + scale1 * dx, y + scale1 * dy);
-            ctx.strokeStyle = app.colors.direction;
-            ctx.lineWidth = px;
-            ctx.stroke();
-            
-            /*const scale2 = 0.1;
-            ctx.beginPath();
-            ctx.moveTo(x, y);
-            ctx.lineTo(x + scale2 * dx, y + scale2 * dy);
-            ctx.strokeStyle = "red";
-            ctx.lineWidth = 3 * px;
-            ctx.stroke();*/
-        }
-
-        ctx.beginPath();
-        ctx.arc(x, y, 5 * px, 0, 2 * Math.PI);
-        ctx.fillStyle = app.colors.bus;
-        ctx.fill();
-        ctx.save();
-        ctx.translate(x, y);
-        ctx.scale(px + 2, -px + 2);
-        ctx.fillText(t.toFixed(1), 0, labelPos || 10);
-        ctx.restore();
-        
-    }
 });
-}

@@ -24,21 +24,47 @@
   // globe.loadPlugin(planetaryjs.plugins.zoom({
   //   scaleExtent: [400, 600]
   // }));
-  globe.loadPlugin(planetaryjs.plugins.drag({
-    // Dragging the globe should pause the
-    // automatic rotation until we release the mouse.
-    onDragStart: function() {
-      this.plugins.autorotate.pause();
-    },
-    onDragEnd: function() {
-      this.plugins.autorotate.resume();
-    }
-  }));
+  if ($(window).width() > 500) {
+    globe.loadPlugin(planetaryjs.plugins.drag({
+      // Dragging the globe should pause the
+      // automatic rotation until we release the mouse.
+      onDragStart: function() {
+        this.plugins.autorotate.pause();
+      },
+      onDragEnd: function() {
+        this.plugins.autorotate.resume();
+      }
+    }));
+  }
+  
+
   // Set up the globe's initial scale, offset, and rotation.
-  globe.projection.scale(280).translate([280, 280]).rotate([-10, -10, -15]);
+  if (window.matchMedia("(orientation: landscape)").matches){
+    globe.projection.scale(80).translate([80, 80]).rotate([-10, -10, -15]);
+  }else if ($(window).width() === 320){
+    globe.projection.scale(150).translate([150, 150]).rotate([-10, -10, -15]);
+  }else if ($(window).width() === 375){
+    globe.projection.scale(100).translate([100, 100]).rotate([-10, -10, -15]);
+  }else if ($(window).width() <= 400){
+    globe.projection.scale(180).translate([180, 180]).rotate([-10, -10, -15]);
+  }else if ($(window).width() <= 450){
+    globe.projection.scale(350).translate([350, 350]).rotate([-10, -10, -15]);
+  }else if ($(window).width() <= 500){
+    globe.projection.scale(200).translate([200, 200]).rotate([-10, -10, -15]);
+  }else if ($(window).width() <= 768){
+    globe.projection.scale(180).translate([180, 180]).rotate([-10, -10, -15]);
+  }else if ($(window).width() === 1366){
+    globe.projection.scale(280).translate([280, 280]).rotate([-10, -10, -15]);
+  }else if ($(window).width() <= 1365){
+    globe.projection.scale(180).translate([180, 180]).rotate([-10, -10, -15]);
+  } else {
+    globe.projection.scale(220).translate([220, 220]).rotate([-10, -10, -15]);
+  }
+
+  
 
   // Every few hundred milliseconds, we'll draw another random ping.
-var colors = ['blue'];
+var colors = ['rgb(0,136,204)'];
 var Bishkek = ['74.5900000','42.8700000'];
 var Moscow = ['37.6155600','55.7522200'];
 var AbuDhabi = ['54.3773','24.4539'];
@@ -59,6 +85,27 @@ var Ottawa = ['-75.6981200','45.4111700'];
 var Vancouver = ['49.2827','123.1207'];
 var Toronto = ['-79.4163000','43.7001100'];
 var Halifax = ['63.5752','44.6488'];
+var Almaty = ['76.9286100','43.2566700'];
+var AbuDabi = ['71.4459800','51.1801000'];
+var Sochi = ['87.6004600','43.8009600'];
+var Urumchi = ['31.0335','17.8252'];
+var NewDelhi = ['77.2244500','28.6357600'];
+var Rabat = ['34.0132500','-6.8325500'];
+var Santiago = ['-70.6482700','-33.4569400'];
+var Djakarta = ['106.8451300', '-6.2146200'];
+var Singapur = ['103.8500700', '1.2896700'];
+var Praga = ['14.4207600','50.0880400'];
+var Varshava = ['21.0117800','52.2297700'];
+var Vienna = ['16.3720800','48.2084900'];
+var Madrid = ['-3.7025600','40.4165000'];
+var Dublin = ['-6.2488900','53.3330600'];
+var Milan = ['9.1895100','45.4642700'];
+var Frankfurt = ['8.6841700','50.1155200'];
+var Florence = ['11.2462600', '43.7792500'];
+var Istanbul = ['41.0138400', '28.9496600'];
+var Oslo = ['10.7460900', '59.9127300'];
+var Edinburgh = ['-3.1964800', '55.9520600'];
+var Vilnius = ['25.2798000', '54.6891600'];
 var c1 = ['30.3141300','59.9386300'];
 var c2 = ['2.1589900','41.3887900'];
 var c3 = ['-74.0817500','4.6097100'];
@@ -73,7 +120,11 @@ var c11 = ['116.3972300','39.9075000'];
 var c12 = ['-74.0059700','40.7142700'];
 var c13 = ['-122.4194200','37.7749300'];
 var c14 = ['-118.2436800','34.0522300'];
-var coords = [Bishkek,Moscow,AbuDhabi,Capetown,Harrare,Nairobi,Cairo,Alger,Sydney,Canberra,Wellington,Brasil,RioDeJaneiro,Antananarivoo,BuenosAires,Ottawa,Vancouver,Toronto,Halifax,c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14];
+var coords = [Bishkek,Moscow,AbuDhabi,Capetown,Harrare,Nairobi,Cairo,Alger,Sydney,Canberra,Wellington,Brasil,RioDeJaneiro,
+Antananarivoo,BuenosAires,Ottawa,Vancouver,Toronto,Halifax,
+Almaty,AbuDabi,Sochi,Urumchi,NewDelhi,Rabat,Santiago,Djakarta,Singapur,
+Praga,Varshava,Vienna,Madrid,Dublin,Milan,Frankfurt,Florence,Istanbul,Oslo,Edinburgh,Vilnius,
+c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14];
   setInterval(function() {
     // var lng = Math.random() * 360 - 180;
     // console.log(lat);
@@ -87,8 +138,13 @@ var coords = [Bishkek,Moscow,AbuDhabi,Capetown,Harrare,Nairobi,Cairo,Alger,Sydne
   // Special code to handle high-density displays (e.g. retina, some phones)
   // In the future, Planetary.js will handle this by itself (or via a plugin).
   if (window.devicePixelRatio == 2) {
-    canvas.width = 800;
-    canvas.height = 800;
+    if ($(window).width() > 1366) {
+      canvas.width = 900;
+      canvas.height = 900;
+    } else {
+      canvas.width = 800;
+      canvas.height = 800;
+    }
     context = canvas.getContext('2d');
     context.scale(2, 2);
   }
