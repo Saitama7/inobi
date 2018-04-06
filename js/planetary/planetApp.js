@@ -39,9 +39,7 @@
   
 
   // Set up the globe's initial scale, offset, and rotation.
-  if (window.matchMedia("(orientation: landscape)").matches){
-    globe.projection.scale(80).translate([80, 80]).rotate([-10, -10, -15]);
-  }else if ($(window).width() === 320){
+  if ($(window).width() === 320){
     globe.projection.scale(150).translate([150, 150]).rotate([-10, -10, -15]);
   }else if ($(window).width() === 375){
     globe.projection.scale(100).translate([100, 100]).rotate([-10, -10, -15]);
