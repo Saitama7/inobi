@@ -1,5 +1,5 @@
 jQuery(function() {
-   if ($(window).width() > 500) {
+   if ($(window).width() > 900) {
 
         if ($(window).width() > 1900) {
             $(document).ready(function () {

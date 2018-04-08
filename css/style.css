@@ -587,9 +587,55 @@ button.contact-btn:hover {
 /* FOOTER*/
 
 /*MEDIA*/
-@media all and (max-width: 369px) {
+@media screen and (max-width: 369px) {
+     html,body {
+        overflow-x: hidden !important;
+        overflow-y: scroll !important;
+    }
+    .smart, .description {
+        width: 100% !important;
+    }
+    #rotatingGlobe {
+        width: 80% !important;
+        height: auto !important;
+    }
+    #rotatingGlobe {
+        top: 43%;
+        left: 11%;
+        z-index: -1;
+    }
+    .description {
+        text-align: justify !important;
+    }
+    .description h2{
+        text-align: left !important;
+    }
+    section.container {
+        min-height: 546px !important;
+        margin:0 !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .nav-menu,.smart {
+        text-align: center;
+    }
+    .animate-device {
+        height: 250px;
+    }
+    .busLoopDesc {
+        display: none !important;
+    }
+    .options {
+        margin-top:0 !important;
+    }
+    .animate-menu {
+        display: none !important;
+    }
+    #contact {
+        min-height: 70% !important;
+    }
     .mobAppDesc .appList {
-        width: 243px !important;
+        width: 208px !important;
     }
     * {
         font-size: 14px !important;
@@ -611,26 +657,114 @@ button.contact-btn:hover {
     }
     .btn-store__title {
         font-size: 11px !important;
+    } 
+    .btn-store__text {
+        left: 70%;
+    }
+    #mobApp img {
+        width: 80% !important;
     }
     .mobApp {
         margin-top: 50px !important;
+        width: 100% !important;
+    }
+    .in-touch {
+        width: 100% !important;
+        margin: 0 !important;
+    }
+    .smart, .description {
+        width: 100% !important;
     }
 }
 /*IPHONE X*/
 @media (min-width: 370px) and (max-width:375px) {
+   html,body {
+        overflow-x: hidden !important;
+        overflow-y: scroll !important;
+    }
+    .nav-menu,.smart {
+        text-align: center;
+    }
+    .smart, .description {
+        width: 100% !important;
+    }
+     .description {
+        text-align: justify !important;
+    }
+    section.container {
+        min-height: 546px !important;
+        margin:0 !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    .animate-menu {
+        display: none !important;
+    }
+    .animate-device, .busLoopDesc {
+        height: 250px;
+    }
+    .busLoopDesc {
+        padding-top: 50px !important;
+    }
+      h1,h2 {
+        font-size: 25px !important;
+        margin-top: 10px !important;
+        text-align: center !important;
+    }
+    #home {
+        padding-top: 15% !important;
+    }
+    html,body {
+        overflow-x: hidden !important;
+        overflow-y: scroll !important;
+    }
+    .smart, .description {
+        width: 100% !important;
+    }
+    #contact {
+        min-height: 70% !important;
+    }
+    #rotatingGlobe {
+        top: 43%;
+        left: 11%;
+        z-index: -1;
+    }
     canvas#rotatingGlobe {
-        width: 600px !important;
-        height: 600px !important;
-        left: 7% !important;
+        width: 80% !important;
+        height: auto !important;
     }
     .appList {
         width: 280px !important;
     }
+    .options {
+        margin-top:0 !important;
+    }
     .mobApp {
         margin-top: 50px !important;
+        width: 100% !important;
+    }
+    .mob-w {
+        flex-basis: auto !important;
+    }
+    #mobApp {
+        width: 100% !important;
+    }
+    #mobApp img{
+        width: 75% !important;
+    }
+    .btn-store {
+        font-size: 15px !important;
+        width: 11em !important;
+    }
+    .btn-store__text {
+        left: 68% !important;
     }
     .in-touch p {
         float: left !importantl
+    }
+     .in-touch {
+        width: 100% !important;
+        margin: 0 !important;
     }
     .mobAppDesc ul li{
         margin-bottom: 10px !important: 
@@ -643,10 +777,10 @@ button.contact-btn:hover {
         width: 260px !important;
     }
 }
-/*END IPHONE X*/
+/*END IPHONE X
 
 /*MOBILE DEVICES*/
-@media all and (max-width: 600px) {
+@media (min-width: 376px) and (max-width: 600px) {
     html,body {
         overflow-x: hidden !important;
         overflow-y: scroll !important;
@@ -658,7 +792,7 @@ button.contact-btn:hover {
         margin-top: 50px !important;
     }
     .container {
-        margin:0;
+        margin:0 auto!important;
         text-align: center !important;
     }
     #home p {
@@ -670,7 +804,9 @@ button.contact-btn:hover {
     li {
         text-align: left !important;
     }
-
+    #busLoopDiv {
+        display: none !important;
+    }
 
     /*FIRST SCREEN*/
     #home {
@@ -685,8 +821,8 @@ button.contact-btn:hover {
         z-index: -1;
     }
     #rotatingGlobe {
-    width: 300px !important;
-    height: 300px !important;
+    width: 80% !important;
+    height: auto !important;
     border-radius: 0;
     }
     .smart {
@@ -711,11 +847,17 @@ button.contact-btn:hover {
     /*END FIRST SCREEN*/
     
     /*SOLUTION SCREEN*/
+    .mob-w {
+        flex-basis: auto !important;
+    }
     #solution {
-        height: 60em !important;
+        height: 50em !important;
     }
     #solution ul {
         padding: 0 !important;
+    }
+    .animate-device {
+        width: 340px !important;
     }
     .animate-device .dLine {
         left: 1% !important;
@@ -741,6 +883,7 @@ button.contact-btn:hover {
     /*THIRD BENEFIT*/
     #benefit {
         margin-bottom: 0 !important;
+        margin-top: 30px !important;
     }
     .busLoop {
         width: 100%;
@@ -804,17 +947,45 @@ button.contact-btn:hover {
 /*END MOBILE DEVICES*/
 
 /*iPAD*/
-@media (min-width: 501px) and (max-width: 768px) {
+@media (min-width: 601px) and (max-width: 900px) {
     .container {
         margin: 30px !important;
     }
+     html,body {
+        overflow-x: hidden !important;
+        overflow-y: scroll !important;
+    }
+    h1,h2 {
+        text-align: center !important;
+    }
+    #wrapper {
+        padding: 10px !important;
+    }
+    .mobApp {
+        margin-top: 50px !important;
+    }
+    .container {
+        margin:0 auto!important;
+        text-align: center !important;
+    }
+    section.container {
+        height: 100vh !important;
+        max-height: 970px !important;
+    }
+    .animate-menu {
+        display: none !important;
+    }
+
     /*HOME SECTION*/
     #rotatingGlobe {
-        width: 600px !important;
-        height: 600px !important;
+        width: 80% !important;
+        height: auto !important;
         top: 40% !important;
         left: 10% !important;
         border-radius: 0 !important;
+    }
+    .smart {
+        width: 100% !important;
     }
     /*END HOME SECTION*/
     #solution h1, #benefit h1 {
@@ -826,10 +997,14 @@ button.contact-btn:hover {
 
     /*SOLUTION SECTION*/
     .deviceImg {
-        width: 500px !important;
+        width: 100%!important;
+    }
+    .mob-w {
+        flex-basis: auto !important;
     }
     .description {
-        width: 84% !important;
+        width: 100% !important;
+        text-align: justify;
     }
     .options {
         margin-top: 0 !important;
@@ -842,6 +1017,17 @@ button.contact-btn:hover {
     }
     /*END SOLUTION SECTION*/
     /*BENEFIT DECTION*/
+    #benefit {
+        height: 200vh !important;
+        min-height: 2000px !important;
+    }
+    #contact {
+        max-height: 500px !important;
+        min-height: 500px !important;
+    }
+    .busLoop {
+        width: 100% !important;
+    }
     .busLoopDesc,.mobAppDesc {
         float: none !important; 
         padding-top: 0 !important;
@@ -856,10 +1042,29 @@ button.contact-btn:hover {
         text-align: left;
     }
     .busLoopDesc .bLine {
-        left: 50.8% !important;
+        left: 60.5% !important;
+    }
+    .mobApp {
+        width: 100% !important;
+        text-align: justify !important;
     }
     #mobApp {
         margin-left: 50px;
+    }
+    #mobApp img {
+        width: 75%;
+        margin-left: 100px !important;
+    }
+    .mobAppContainer {
+        left: 60.4px;
+        width: 198px;
+        height: 331px;
+    }
+    .mobAppDesc,.mobAppDesc ul {
+        width: 94%;
+    }
+   .mobAppDesc ul li{
+        margin-bottom: 10px !important; 
     }
     .appList {
         float: none !important;
@@ -868,7 +1073,7 @@ button.contact-btn:hover {
 
     /*CONTECT SECTION*/
     .in-touch {
-        width: 80% !important;
+        width: 100% !important;
         margin: 20% 0 !important;
         text-align: center !important;
     }
@@ -878,15 +1083,20 @@ button.contact-btn:hover {
 /*END iPAD*/
 
 /*IPAD PRO*/
-@media (min-width: 800px) and (max-width: 1024px) {
+@media (min-width: 901px) and (max-width: 1024px) {
     .container {
         width: 80% !important;
         margin-left: 100px !important;
     }
     /*HOME SCREEN*/
-     #rotatingGlobe {
-        top: 35% !important;
-        left: 0 !important;
+    h1 {
+        font-size: 2em !important;
+    }
+   #rotatingGlobe {
+        width: 80% !important;
+        height: auto !important;
+        top: 40% !important;
+        left: 10% !important;
         border-radius: 0 !important;
     }
 
@@ -944,6 +1154,11 @@ button.contact-btn:hover {
     /*END CONTACT SETION*/
 }
 /*END IPAD PRO*/
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+
+}
+
 /*Desktop*/
 @media (min-width: 1367px) and (max-width: 1440px) {
     #rotatingGlobe {
@@ -1059,28 +1274,3 @@ button.contact-btn:hover {
     }
 }
 /*end desktop*/
-
-@media screen and (orientation:landscape) and (max-device-width: 900px) {
-    html{
-        -webkit-transform: rotate(-90deg);
-           -moz-transform: rotate(-90deg);
-            -ms-transform: rotate(-90deg);
-             -o-transform: rotate(-90deg);
-                transform: rotate(-90deg);
-        -webkit-transform-origin: left top;
-           -moz-transform-origin: left top;
-            -ms-transform-origin: left top;
-             -o-transform-origin: left top;
-                transform-origin: left top;
-        width: 320px; /*Разрешение экрана iPhone*/
-        position: absolute;
-        top: 100%;
-        left: 0
-    }
-    #home h1 {
-        font-size: 1.2em !important;
-    }
-    .smart {
-        height: 500px !important;
-    }
-}
