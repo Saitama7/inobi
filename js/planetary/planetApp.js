@@ -39,46 +39,37 @@
   
 
   // Set up the globe's initial scale, offset, and rotation.
-  // if ($(window).width() === 320){
-  //   globe.projection.scale(150).translate([150, 150]).rotate([-10, -10, -15]);
-  // }else if ($(window).width() === 375){
-  //   globe.projection.scale(100).translate([100, 100]).rotate([-10, -10, -15]);
-  // }else if ($(window).width() <= 400){
-  //   globe.projection.scale(180).translate([180, 180]).rotate([-10, -10, -15]);
-  // }else if ($(window).width() <= 450){
-  //   globe.projection.scale(350).translate([350, 350]).rotate([-10, -10, -15]);
-  // }else if ($(window).width() <= 500){
-  //   globe.projection.scale(200).translate([200, 200]).rotate([-10, -10, -15]);
-  // }else if ($(window).width() <= 768){
-  //   globe.projection.scale(180).translate([180, 180]).rotate([-10, -10, -15]);
-  // }else if ($(window).width() === 1366){
-  //   globe.projection.scale(280).translate([280, 280]).rotate([-10, -10, -15]);
-  // }else if ($(window).width() <= 1365){
-  //   globe.projection.scale(180).translate([180, 180]).rotate([-10, -10, -15]);
-  // } else {
-  //   globe.projection.scale(220).translate([220, 220]).rotate([-10, -10, -15]);
-  // }
 
-  if ($(window).width() <= 340){
-    globe.projection.scale(180).translate([200, 180]).rotate([-10, -10, -15]);
-  }else if ($(window).width() === 375 &&  $(window).height() === 667) {
-    globe.projection.scale(180).translate([200, 180]).rotate([-10, -10, -15]);
-  }else if ($(window).width() >= 350 && $(window).width() < 450 && $(window).height() > 600 && $(window).height() < 850) {
-    globe.projection.scale(320).translate([340, 320]).rotate([-10, -10, -15]);
-  }else if ($(window).width() >= 370 && $(window).width() <= 768) {
-    globe.projection.scale(180).translate([200, 180]).rotate([-10, -10, -15]);
-  } else if ($(window).width() >= 769 && $(window).width() <= 1023) {
-    globe.projection.scale(260).translate([280, 260]).rotate([-10, -10, -15]);
-  } else if ($(window).width() >= 1024 && $(window).width() <= 1200) {
-    globe.projection.scale(180).translate([180, 180]).rotate([-10, -10, -15]);
-  } else if ($(window).width() >= 1201 && $(window).width() <= 1440) {
-    globe.projection.scale(220).translate([220, 220]).rotate([-10, -10, -15]);
-  } else if ($(window).width() >= 1441 && $(window).width() <= 2560) {
-    globe.projection.scale(180).translate([180, 180]).rotate([-10, -10, -15]);
+  // if (window.matchMedia("(orientation: landscape)").matches) {
+  //   globe.projection.scale(180).translate([200, 180]).rotate([-10, -10, -15]);
+  // }
+  // if ($(window).width() <= 340){
+  //   globe.projection.scale(180).translate([200, 180]).rotate([-10, -10, -15]);
+  // }else if ($(window).width() === 375 &&  $(window).height() === 667) {
+  //   globe.projection.scale(180).translate([200, 180]).rotate([-10, -10, -15]);
+  // }else if ($(window).width() >= 350 && $(window).width() < 450 && $(window).height() > 600 && $(window).height() < 850) {
+  //   globe.projection.scale(320).translate([340, 320]).rotate([-10, -10, -15]);
+  // }else if ($(window).width() >= 451 && $(window).width() <= 600) {
+  //   globe.projection.scale(180).translate([200, 180]).rotate([-10, -10, -15]);
+  // } else if ($(window).width() >= 601 && $(window).width() <= 1023) {
+  //   globe.projection.scale(260).translate([280, 260]).rotate([-10, -10, -15]);
+  // } else if ($(window).width() >= 1024 && $(window).width() <= 1200) {
+  //   globe.projection.scale(180).translate([180, 180]).rotate([-10, -10, -15]);
+  // } else if ($(window).width() >= 1201 && $(window).width() <= 1440) {
+  //   globe.projection.scale(220).translate([220, 220]).rotate([-10, -10, -15]);
+  // } else if ($(window).width() >= 1441 && $(window).width() <= 2560) {
+  //   globe.projection.scale(180).translate([200, 180]).rotate([-10, -10, -15]);
+  // } else {
+  //   globe.projection.scale(280).translate([280, 280]).rotate([-10, -10, -15]);
+  // }
+  var a = $(window).width();
+  if ($(window).width() <= 400) {
+    globe.projection.scale(a/2).translate([a/2 + 20, a/2]).rotate([-10, -10, -15]);
+  }else if ($(window).width() <= 800) {
+    globe.projection.scale(a/4).translate([a/4 + 20, a/4]).rotate([-10, -10, -15]);
   } else {
     globe.projection.scale(280).translate([280, 280]).rotate([-10, -10, -15]);
   }
-
   
 
   // Every few hundred milliseconds, we'll draw another random ping.

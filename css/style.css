@@ -635,8 +635,18 @@ button.contact-btn:hover {
         min-height: 70% !important;
     }
     .mobAppDesc .appList {
-        width: 208px !important;
+        width: 223px !important;
     }
+    .btn-sore__description {
+        font-size: 0.6rem !important;
+    }
+    .mobAppDesc {
+        width: 100% !important;
+    }
+    .mobAppDesc ul {
+        width: 100% !important;
+    }
+
     * {
         font-size: 14px !important;
     }
@@ -657,9 +667,14 @@ button.contact-btn:hover {
     }
     .btn-store__title {
         font-size: 11px !important;
+        text-align: left !important;
     } 
     .btn-store__text {
         left: 70%;
+        text-align: left !important;
+    }
+    .btns {
+        text-align: center !important;
     }
     #mobApp img {
         width: 80% !important;
@@ -684,6 +699,9 @@ button.contact-btn:hover {
     }
     .nav-menu,.smart {
         text-align: center;
+    }
+    .btn-store__description {
+        font-size: 0.5rem !important;
     }
     .smart, .description {
         width: 100% !important;
@@ -728,6 +746,8 @@ button.contact-btn:hover {
         top: 43%;
         left: 11%;
         z-index: -1;
+        border-radius: none !important;
+
     }
     canvas#rotatingGlobe {
         width: 80% !important;
@@ -780,7 +800,7 @@ button.contact-btn:hover {
 /*END IPHONE X
 
 /*MOBILE DEVICES*/
-@media (min-width: 376px) and (max-width: 600px) {
+@media (min-width: 376px) and (max-width: 720px) {
     html,body {
         overflow-x: hidden !important;
         overflow-y: scroll !important;
@@ -823,7 +843,7 @@ button.contact-btn:hover {
     #rotatingGlobe {
     width: 80% !important;
     height: auto !important;
-    border-radius: 0;
+    border-radius: 0 !important;
     }
     .smart {
         width: 100%;
@@ -947,7 +967,7 @@ button.contact-btn:hover {
 /*END MOBILE DEVICES*/
 
 /*iPAD*/
-@media (min-width: 601px) and (max-width: 900px) {
+@media (min-width: 721px) and (max-width: 900px) {
     .container {
         margin: 30px !important;
     }
@@ -982,7 +1002,7 @@ button.contact-btn:hover {
         height: auto !important;
         top: 40% !important;
         left: 10% !important;
-        border-radius: 0 !important;
+        border-radius: none !important;
     }
     .smart {
         width: 100% !important;
@@ -1274,3 +1294,73 @@ button.contact-btn:hover {
     }
 }
 /*end desktop*/
+
+@media screen and (max-width: 800px) and (orientation:landscape) {
+    #home {
+        height: 200vh !important;
+    }
+    #solution {
+        height: 300vh !important;
+    }
+    #benefit.container {
+        min-height: 400vh !important;
+    }
+    #mobApp{
+        margin-left:  20% !important;
+    }
+    #mobApp img {
+        margin-left: 35px !important;
+    }
+    .mobAppDesc, .mobAppDesc ul {
+        width: 80% !important;
+        margin-left: 5% !important;
+    }
+    .btns {
+        margin-left: 10% !important;
+    }
+    #contact {
+        height: 100vh !important;
+    }
+     #wrapper {
+        padding: 10px !important;
+    }
+    .mobApp {
+        margin-top: 50px !important;
+    }
+    .container {
+        margin:0 auto!important;
+        text-align: center !important;
+    }
+    #home p {
+        text-align: center !important;
+    }
+    p {
+        text-align: justify !important;
+    }
+    li {
+        text-align: left !important;
+    }
+    #busLoopDiv {
+        display: none !important;
+    }
+    .mob-w {
+        flex-basis: auto !important;
+    }
+    .busLoopDesc .bLine {
+        left: 48.5% !important;
+    }
+    .animate-device ul {
+        margin-left: 76px !important;
+    }
+    .animate-device .dLine {
+        left: 23.5% !important;
+    }
+    html,body {
+        overflow-x: hidden !important;
+        overflow-y: scroll !important;
+    }
+    #rotatingGlobe {
+        border-radius: none !important;
+    }
+
+}
