@@ -581,6 +581,9 @@ button.contact-btn:hover {
 .in-touch p {
         float: left !importantl
     }
+    #mob-planet {
+        display: none;
+    }
 
 /*END MAIN*/
 
@@ -596,13 +599,13 @@ button.contact-btn:hover {
         width: 100% !important;
     }
     #rotatingGlobe {
-        width: 80% !important;
-        height: auto !important;
+       display: none !important;
     }
-    #rotatingGlobe {
-        top: 43%;
-        left: 11%;
-        z-index: -1;
+    #mob-planet {
+        display: block !important;
+        min-width: 350px;
+        height: 350px;
+        text-align: center;
     }
     .description {
         text-align: justify !important;
@@ -742,16 +745,14 @@ button.contact-btn:hover {
     #contact {
         min-height: 70% !important;
     }
-    #rotatingGlobe {
-        top: 43%;
-        left: 11%;
-        z-index: -1;
-        border-radius: none !important;
-
+     #rotatingGlobe {
+       display: none !important;
     }
-    canvas#rotatingGlobe {
-        width: 80% !important;
-        height: auto !important;
+    #mob-planet {
+        display: block !important;
+        min-width: 350px;
+        height: 350px;
+        text-align: center;
     }
     .appList {
         width: 280px !important;
@@ -836,18 +837,16 @@ button.contact-btn:hover {
         font-size: 2em !important;
     }
     #rotatingGlobe {
-        top: 43%;
-        left: 11%;
-        z-index: -1;
+       display: none !important;
     }
-    #rotatingGlobe {
-    width: 80% !important;
-    height: auto !important;
-    border-radius: 0 !important;
+    #mob-planet {
+        display: block !important;
+        min-width: 350px;
+        height: 350px;
+        text-align: center;
     }
     .smart {
         width: 100%;
-        height: 81vh;
         padding: 0;
         margin: 20px 0 0 0;
         text-align: center;
@@ -1193,7 +1192,7 @@ button.contact-btn:hover {
     .container {
         min-width: 90% !important;
         margin: 0 auto !important;
-        padding-top: 5% !important;
+        padding-top: 3% !important;
     }
     #wrapper {
         min-width: 1000px !important;
@@ -1201,6 +1200,9 @@ button.contact-btn:hover {
     }
     * {
         font-size: 28px;
+    }
+    section {
+        height: 100vh;
     }
     .animate-menu {
         width:400px !important;
@@ -1260,7 +1262,7 @@ button.contact-btn:hover {
         margin-bottom: 0 !important;
     }
     #mobApp {
-        width: 900px !important;
+        width: 80% !important;
        /* margin-top: 0 !important;*/
     }
     .mobAppDesc {
@@ -1283,7 +1285,7 @@ button.contact-btn:hover {
         width: 600px !important;
     }
     #benefit {
-        height: 160vh !important;
+        height: auto !important;
     }
     .in-touch {
         margin: 10% auto 0;
@@ -1291,6 +1293,9 @@ button.contact-btn:hover {
     }
     .btn-store {
         margin:0 2rem !important;
+    }
+    #mobApp img {
+        width: 80%;
     }
 }
 /*end desktop*/

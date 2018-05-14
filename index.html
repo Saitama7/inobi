@@ -18,7 +18,6 @@
 <body id="body">
         <div id="wrapper">
             <section class="container panel" id="home" data-section-name="home">
-                <!-- <div id="planet"></div> -->
                 <canvas id='rotatingGlobe' width='700' height='700' cursor: move;'></canvas>
                 <header class="">
                     <div class="nav-menu">
@@ -40,6 +39,9 @@
                 <div class="smart">
                     <p>Monitor public transport in real time with</p>
                     <h1>Inobi Smart Public Transport</h1>
+                </div>
+                <div id="mob-planet">
+                    <canvas id='mobRotatingGlobe' width='320' height='320' cursor: move;'></canvas>
                 </div>
             </section>
             <section id="solution" class="container panel" data-section-name="solution">
@@ -178,8 +180,8 @@
 <script type="text/javascript" src="js/deviceAnimate.js"></script>
 <script type="text/javascript" src="js/benefitsAnime.js"></script>
 <script type="text/javascript" src="js/url.min.js"></script>
-<script type='text/javascript' src='js/planetary/lib/topojson.v1.min.js'></script>
 <script type='text/javascript' src='js/planetary/lib/d3.v3.min.js'></script>
+<script type='text/javascript' src='js/planetary/lib/topojson.v1.min.js'></script>
 <script type="text/javascript" src="js/planetary/planetaryjs.min.js"></script>
 <script type="text/javascript" src="js/planetary/planetApp.js"></script>
 <script type="text/javascript" src="js/busLoopAnim.js"></script>

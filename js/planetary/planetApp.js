@@ -22,7 +22,7 @@
   // The `zoom` and `drag` plugins enable
   // manipulating the globe with the mouse.
   // globe.loadPlugin(planetaryjs.plugins.zoom({
-  //   scaleExtent: [400, 600]
+  //   scaleExtent: [100, 300]
   // }));
   if ($(window).width() > 500) {
     globe.loadPlugin(planetaryjs.plugins.drag({
@@ -39,36 +39,26 @@
   
 
   // Set up the globe's initial scale, offset, and rotation.
-
-  // if (window.matchMedia("(orientation: landscape)").matches) {
-  //   globe.projection.scale(180).translate([200, 180]).rotate([-10, -10, -15]);
-  // }
-  // if ($(window).width() <= 340){
-  //   globe.projection.scale(180).translate([200, 180]).rotate([-10, -10, -15]);
-  // }else if ($(window).width() === 375 &&  $(window).height() === 667) {
-  //   globe.projection.scale(180).translate([200, 180]).rotate([-10, -10, -15]);
-  // }else if ($(window).width() >= 350 && $(window).width() < 450 && $(window).height() > 600 && $(window).height() < 850) {
-  //   globe.projection.scale(320).translate([340, 320]).rotate([-10, -10, -15]);
-  // }else if ($(window).width() >= 451 && $(window).width() <= 600) {
-  //   globe.projection.scale(180).translate([200, 180]).rotate([-10, -10, -15]);
-  // } else if ($(window).width() >= 601 && $(window).width() <= 1023) {
-  //   globe.projection.scale(260).translate([280, 260]).rotate([-10, -10, -15]);
-  // } else if ($(window).width() >= 1024 && $(window).width() <= 1200) {
-  //   globe.projection.scale(180).translate([180, 180]).rotate([-10, -10, -15]);
-  // } else if ($(window).width() >= 1201 && $(window).width() <= 1440) {
-  //   globe.projection.scale(220).translate([220, 220]).rotate([-10, -10, -15]);
-  // } else if ($(window).width() >= 1441 && $(window).width() <= 2560) {
-  //   globe.projection.scale(180).translate([200, 180]).rotate([-10, -10, -15]);
-  // } else {
-  //   globe.projection.scale(280).translate([280, 280]).rotate([-10, -10, -15]);
-  // }
-  var a = $(window).width();
-  if ($(window).width() <= 400) {
-    globe.projection.scale(a/2).translate([a/2 + 20, a/2]).rotate([-10, -10, -15]);
-  }else if ($(window).width() <= 800) {
+  var scale = Math.floor($('#mobRotatingGlobe').width() / 2.3);
+  if ($(window).width() <= 480) {
+    var canvas = document.getElementById('mobRotatingGlobe');
+    globe.projection.scale(scale).translate([scale, scale]).rotate([-10, -10, -15]);
+    console.log(Math.floor($('#mobRotatingGlobe').width() / 2));
+  }else if ($(window).width() > 480 && $(window).width() <= 800) {
+    var canvas = document.getElementById('mobRotatingGlobe');
     globe.projection.scale(a/4).translate([a/4 + 20, a/4]).rotate([-10, -10, -15]);
   } else {
+    var canvas = document.getElementById('rotatingGlobe');
     globe.projection.scale(280).translate([280, 280]).rotate([-10, -10, -15]);
+  }
+
+  if ($(window).width() == 320) {
+    var canvas = document.getElementById('mobRotatingGlobe');
+    globe.projection.scale(70).translate([70, 70]).rotate([-10, -10, -15]);
+  }
+  if ($(window).height() == 667) {
+    var canvas = document.getElementById('mobRotatingGlobe');
+    globe.projection.scale(80).translate([80, 80]).rotate([-10, -10, -15]);
   }
   
 
@@ -143,19 +133,22 @@ c1,c2,c3,c4,c5,c6,c7,c8,c9,c10,c11,c12,c13,c14];
      globe.plugins.pings.add(coord[0],coord[1], {color : color, ttl: 1500, angle: 1.5});
   }, 10);
 
-  var canvas = document.getElementById('rotatingGlobe');
+ 
   // Special code to handle high-density displays (e.g. retina, some phones)
   // In the future, Planetary.js will handle this by itself (or via a plugin).
   if (window.devicePixelRatio == 2) {
     if ($(window).width() > 1366) {
       canvas.width = 900;
       canvas.height = 900;
+    } else if ($(window).width() <= 480){
+      canvas.width = 320;
+      canvas.height = 320;
     } else {
       canvas.width = 800;
       canvas.height = 800;
     }
     context = canvas.getContext('2d');
-    context.scale(2, 2);
+    context.scale(1.8, 1.8);
   }
   // Draw that globe!
   globe.draw(canvas);
